@@ -285,7 +285,7 @@ aside .widget h2:before, .sidebar .widget h2:before{
 }
 .widget-recentpost ul{
 	float:left;
-	width:100#;
+	width:100px;
 	margin:0px;
 	padding:0px;
 	list-style:none;
