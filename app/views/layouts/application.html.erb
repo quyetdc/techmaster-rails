@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Bookstore</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+
+<%= render partial: 'shared/head' %>
+
+<%= render partial: 'shared/loader_wrapper' %>
+
+
 <body>
+    <!-- WRAPPER START -->
+    <div class="wrapper">
+      <%= render partial: 'shared/header' %>
+      <%= render partial: 'shared/banner' %>
 
-<%= yield %>
+      <!--CONTENT START-->
+      <div class="kode-content padding-tb-50">
+        <div class="container">
+          <div class="row">
+            <%= render partial: 'shared/sidebar' %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
 
+      <%= render partial: 'shared/news_letter' %>
+      <%= render partial: 'shared/footer' %>
+      <%= render partial: 'shared/copy_right' %>
+    </div>
+    <!-- WRAPPER END -->
 </body>
+
+
 </html>

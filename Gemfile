@@ -43,6 +43,9 @@ group :production do
   gem 'pg'
 end
 
+gem 'annotate'
+
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -53,3 +56,4 @@ end
 
 gem "font-awesome-rails"
 
+gem 'rails_admin'

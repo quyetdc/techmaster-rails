@@ -1,39 +1,219 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-9">
+<!--BOOK DETAIL START-->
+<div class="lib-book-detail">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="kode-thumb">
+        <%= image_tag @book.image %>
+      </div>
+    </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @book.name %>
-</p>
+    <div class="col-md-7">
+      <div class="kode-text">
+        <h2>
+          <%= @book.name %>
+        </h2>
 
-<p>
-  <strong>About:</strong>
-  <%= @book.about %>
-</p>
+        <div class="product-review">
+          <div class="rating">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
+          <p>4 Customer reveiws</p>
+        </div>
+        <div class="product-price">
+          <h4>
+            $<%= @book.price %>
+          </h4>
+          <p>Author : <span class="color">Robert L. Lukdke</span></p>
+        </div>
+        <div class="book-text">
+          <p>
+            <%= @book.about %>
+          </p>
+        </div>
 
-<p>
-  <strong>Publisher:</strong>
-  <%= @book.publisher %>
-</p>
+        <div class="book-text">
+          <p>Category: Books.</p>
+          <p>Tag: books.</p>
+          <p>Author: Daniel Abraham</p>
+          <p>Publisher: Journal inc</p>
+          <p>Product ID: 1100</p>
+        </div>
+        <a href="#" class="add-to-cart">Add To Cart</a>
+        <a href="#" class="add-to-cart">Add To Wishlist</a>
+        <a href="#" class="add-to-cart">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--BOOK DETAIL END-->
 
-<p>
-  <strong>Year:</strong>
-  <%= @book.year %>
-</p>
 
-<p>
-  <strong>Isbn:</strong>
-  <%= @book.isbn %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @book.price %>
-</p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @book.image %>
-</p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+<!--PRODUCT REVIEW TABS START-->
+<div class="product-review-tabs">
+  <!--NAV TABS START-->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#Description " aria-controls="Description" role="tab" data-toggle="tab">Description </a></li>
+    <li role="presentation"><a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab">Reviews</a></li>
+    <li role="presentation"><a href="#tags" aria-controls="tags" role="tab" data-toggle="tab">Tags</a></li>
+    <li role="presentation"><a href="#CustomTab" aria-controls="CustomTab" role="tab" data-toggle="tab">Custom Tab</a></li>
+  </ul>
+  <!--NAV TABS END-->
+  <!--TAB PANEL START-->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="Description">
+      <p>Cum altera mandamus in, mea verear disputationi et. Vel regione discere ut, legere expetenda ut eos. In nam nibh invenire similique. Atqui mollis ea his, ius graecis accommodare te. No eam tota nostrum cotidieque. Est cu nibh clita. Sed an nominavi maiestatis, et duo corrumpit constituto, duo id rebum lucilius. Te eam iisque deseruisse, ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit, modus voluptaria ex per. Aeque dicam consulatu eu his, probatus neglegentur disputationi sit et. Ei nec ludus epicuri petentium, vis appetere maluisset ad. Et hinc exerci utinam cum. Sonet saperet nominavi est at, vel eu sumo tritani. Cum ex minim legere.</p>
+      <p>Sed an nominavi maiestatis, et duo corrumpit constituto, duo id rebum lucilius. Te eam iisque deseruisse, ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit, modus voluptaria ex per. Aeque dicam consulatu eu his, probatus neglegentur disputationi sit et. Ei nec ludus epicuri petentium, vis appetere maluisset ad. Et hinc exerci utinam cum. Sonet saperet nominavi est at, vel eu sumo tritani. Cum ex minim legere.</p>
+      <p>Ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit, modus voluptaria ex per. Aeque dicam consulatu eu his, probatus neglegentur disputationi sit et. Ei nec ludus epicuri petentium, vis appetere maluisset ad. Et hinc exerci utinam cum. Sonet saperet nominavi est at, vel eu sumo tritani. Cum ex minim legere.</p>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="reviews">
+      <div class="kode-comments">
+        <ul>
+          <li>
+            <div class="kode-thumb">
+              <a href="#"><img alt="" src="images/author14.png"></a>
+            </div>
+            <div class="kode-text">
+              <h4>Saul Bellow</h4>
+              <p class="designation">JUNE 20, 2015</p>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+              <a class="reply" href="#">Reply</a>
+            </div>
+          </li>
+          <li>
+            <div class="kode-thumb">
+              <a href="#"><img alt="" src="images/author14.png"></a>
+            </div>
+            <div class="kode-text">
+              <h4>Saul Bellow</h4>
+              <p class="designation">JUNE 20, 2015</p>
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+              <a class="reply" href="#">Reply</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="tags">
+      <div class="product-tags">
+        <a href="#">habemus</a>
+        <a href="#">accusam</a>
+        <a href="#">vero</a>
+        <a href="#">dolor</a>
+        <a href="#">justo</a>
+        <a href="#">diam</a>
+        <a href="#">nonumy</a>
+        <a href="#">consetetur</a>
+        <a href="#">erat</a>
+        <a href="#">sanctus</a>
+        <a href="#">gubergren</a>
+        <a href="#">eirmod</a>
+        <a href="#">habemus</a>
+        <a href="#">accusam</a>
+        <a href="#">vero</a>
+        <a href="#">dolor</a>
+        <a href="#">justo</a>
+        <a href="#">diam</a>
+        <a href="#">nonumy</a>
+        <a href="#">consetetur</a>
+        <a href="#">erat</a>
+        <a href="#">sanctus</a>
+        <a href="#">gubergren</a>
+        <a href="#">eirmod</a>
+        <a href="#">habemus</a>
+        <a href="#">accusam</a>
+        <a href="#">vero</a>
+        <a href="#">dolor</a>
+        <a href="#">justo</a>
+        <a href="#">diam</a>
+        <a href="#">nonumy</a>
+        <a href="#">consetetur</a>
+        <a href="#">erat</a>
+        <a href="#">sanctus</a>
+        <a href="#">gubergren</a>
+        <a href="#">eirmod</a>
+      </div>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="CustomTab">
+      <p>Ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit, modus voluptaria ex per. Aeque dicam consulatu eu his, probatus neglegentur disputationi sit et. Ei nec ludus epicuri petentium, vis appetere maluisset ad. Et hinc exerci utinam cum. Sonet saperet nominavi est at, vel eu sumo tritani. Cum ex minim legere.</p>
+      <p>Te eam iisque deseruisse, ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit, modus voluptaria ex per. Aeque dicam consulatu eu his, probatus neglegentur disputationi sit et. Ei nec ludus epicuri petentium, vis appetere maluisset ad. Et hinc exerci utinam cum. Sonet saperet nominavi est at, vel eu sumo tritani. Cum ex minim legere.</p>
+      <p>Sed an nominavi maiestatis, et duo corrumpit constituto, duo id rebum lucilius. Te eam iisque deseruisse, ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit, modus voluptaria ex per. Aeque dicam consulatu eu his, probatus neglegentur disputationi sit et. Ei nec ludus epicuri petentium, vis appetere maluisset ad. Et hinc exerci utinam cum. Sonet saperet nominavi est at, vel eu sumo tritani. Cum ex minim legere.</p>
+      <p>Ipsum euismod his at. Eu putent habemus voluptua sit, sit cu rationibus scripserit, modus voluptaria ex per. Aeque dicam consulatu eu his, probatus neglegentur disputationi sit et. Ei nec ludus epicuri petentium, vis appetere maluisset ad. Et hinc exerci utinam cum. Sonet saperet nominavi est at, vel eu sumo tritani. Cum ex minim legere.</p>
+    </div>
+  </div>
+  <!--TAB PANEL END-->
+</div>
+<!--PRODUCT REVIEW TABS END-->
+<!--RELATED PRODUCTS START-->
+<div class="lib-related-products">
+  <h2>Related Books</h2>
+  <div class="row">
+    <!--PRODUCT GRID START-->
+    <div class="col-md-4">
+      <div class="best-seller-pro">
+        <figure>
+          <img src="images/book7.png" alt="">
+        </figure>
+        <div class="kode-text">
+          <h3><a href="#">Burnt Siena</a></h3>
+        </div>
+        <div class="kode-caption">
+          <h3>Art History Mystery</h3>
+          <div class="rating">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
+          <p>Sara Wisseman</p>
+          <p class="price">$334.50</p>
+          <a href="#" class="add-to-cart">Add To Cart</a>
+        </div>
+      </div>
+    </div>
+    <!--PRODUCT GRID END-->
+    <!--PRODUCT GRID START-->
+    <div class="col-md-4">
+      <div class="best-seller-pro">
+        <figure>
+          <img src="images/book8.png" alt="">
+        </figure>
+        <div class="kode-text">
+          <h3><a href="#">Chrysalis</a></h3>
+        </div>
+        <div class="kode-caption">
+          <h3>The Brave Girl</h3>
+          <div class="rating">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
+          <p>William S.</p>
+          <p class="price">$24.75</p>
+          <a href="#" class="add-to-cart">Add To Cart</a>
+        </div>
+      </div>
+    </div>
+    <!--PRODUCT GRID END-->
+    <!--PRODUCT GRID START-->
+    <div class="col-md-4">
+      <div class="best-seller-pro">
+        <figure>
+          <img alt="" src="images/book12.png">
+        </figure>
+        <div class="kode-text">
+          <h3><a href="#">Dead Water</a></h3>
+        </div>
+        <div class="kode-caption">
+          <h3>Dead Water in the Sea</h3>
+          <div class="rating">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
+          <p>Ann Grannger</p>
+          <p class="price">$777.75</p>
+          <a class="add-to-cart" href="#">Add To Cart</a>
+        </div>
+      </div>
+    </div>
+    <!--PRODUCT GRID END-->
+  </div>
+</div>
+<!--RELATED PRODUCTS END-->
+</div>
