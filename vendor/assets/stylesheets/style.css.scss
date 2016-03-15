@@ -1535,9 +1535,19 @@ footer{
 .kode-inner-banner{
 	float:left;
 	width:100%;
-	background: image-url('inner-banner');
 	background-size:cover;
+    background: image-url('banner-1') center center;
+    position: relative;
+}
 
+.banner-overlay {
+  float:left;
+  width:100%;
+  background: black;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
 }
 
 .kode-profile-text{
