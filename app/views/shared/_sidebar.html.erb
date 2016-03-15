@@ -22,39 +22,23 @@
   <div class="widget widget-new-arrival">
     <h2>New Arrival</h2>
     <ul>
-      <li>
-        <div class="new-arrival">
-          <div class="kode-thumb">
-            <a href="#"><img src="images/new-arrival1.png" alt=""></a>
-          </div>
-          <div class="kode-text">
-            <h3>consetetur sadip scing</h3>
-            <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="new-arrival">
-          <div class="kode-thumb">
-            <a href="#"><img src="images/new-arrival2.png" alt=""></a>
-          </div>
-          <div class="kode-text">
-            <h3>consetetur sadip scing</h3>
-            <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="new-arrival">
-          <div class="kode-thumb">
-            <a href="#"><img src="images/new-arrival3.png" alt=""></a>
-          </div>
-          <div class="kode-text">
-            <h3>consetetur sadip scing</h3>
-            <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-          </div>
-        </div>
-      </li>
+      <% @new_arrivals.each do |book| %>
+          <li>
+            <div class="new-arrival">
+              <div class="kode-thumb">
+                <a href="#">
+                  <%= image_tag book.image %>
+                </a>
+              </div>
+              <div class="kode-text">
+                <h3><%= book.name %></h3>
+                <p>
+                  <%= truncate(book.about, length: 200) %>
+                </p>
+              </div>
+            </div>
+          </li>
+      <% end %>
     </ul>
   </div>
   <!--NEW ARRIVAL WIDGET END-->
@@ -78,64 +62,22 @@
   <div class="widget widget-new-arrival">
     <h2>Best Sellers</h2>
     <ul class="bxslider">
-      <li>
-        <div class="new-arrival">
-          <div class="kode-thumb">
-            <a href="#"><img src="images/new-arrival2.png" alt=""></a>
-          </div>
-          <div class="kode-text">
-            <h3>consetetur sadip scing</h3>
-            <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-          </div>
-        </div>
-        <div class="new-arrival">
-          <div class="kode-thumb">
-            <a href="#"><img src="images/new-arrival1.png" alt=""></a>
-          </div>
-          <div class="kode-text">
-            <h3>consetetur sadip scing</h3>
-            <p>Sed diam nonumy eirmod tempor invidunt ut labore et</p>
-          </div>
-        </div>
-        <div class="new-arrival">
-          <div class="kode-thumb">
-            <a href="#"><img src="images/new-arrival3.png" alt=""></a>
-          </div>
-          <div class="kode-text">
-            <h3>consetetur sadip scing</h3>
-            <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="new-arrival">
-          <div class="kode-thumb">
-            <a href="#"><img src="images/new-arrival3.png" alt=""></a>
-          </div>
-          <div class="kode-text">
-            <h3>consetetur sadip scing</h3>
-            <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-          </div>
-        </div>
-        <div class="new-arrival">
-          <div class="kode-thumb">
-            <a href="#"><img src="images/new-arrival2.png" alt=""></a>
-          </div>
-          <div class="kode-text">
-            <h3>consetetur sadip scing</h3>
-            <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-          </div>
-        </div>
-        <div class="new-arrival">
-          <div class="kode-thumb">
-            <a href="#"><img src="images/new-arrival1.png" alt=""></a>
-          </div>
-          <div class="kode-text">
-            <h3>consetetur sadip scing</h3>
-            <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-          </div>
-        </div>
-      </li>
+      <% @best_sellers.each do |book| %>
+          <li>
+            <div class="new-arrival">
+              <div class="kode-thumb">
+                <a href="#"><%= image_tag book.image %></a>
+                <!--<a href="#"><img src="images/new-arrival2.png" alt=""></a>-->
+              </div>
+              <div class="kode-text">
+                <h3><%= book.name %></h3>
+                <p>
+                  <%= truncate(book.about, length: 150) %>
+                </p>
+              </div>
+            </div>
+          </li>
+      <% end %>
     </ul>
   </div>
   <!--NEW ARRIVAL WIDGET END-->

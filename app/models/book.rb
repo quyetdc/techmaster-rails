@@ -16,6 +16,9 @@
 
 class Book < ActiveRecord::Base
 
+  enum is_new: [:in_stock, :new_arrival]
+  enum is_best_seller: [:normal_seller, :best_seller]
+
   has_many :books_categories
   has_many :categories, through: :books_categories
 
