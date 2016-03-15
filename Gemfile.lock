@@ -40,6 +40,7 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     arel (6.0.3)
+    bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -53,6 +54,13 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
     debug_inspector (0.0.2)
+    devise (3.5.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.6.0)
     font-awesome-rails (4.5.0.0)
@@ -86,6 +94,7 @@ GEM
     nested_form (0.3.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    orm_adapter (0.5.0)
     pg (0.18.4)
     rack (1.6.4)
     rack-pjax (0.8.0)
@@ -135,6 +144,8 @@ GEM
     rdoc (4.2.2)
       json (~> 1.4)
     remotipart (1.2.1)
+    responders (2.1.1)
+      railties (>= 4.2.0, < 5.1)
     safe_yaml (1.0.4)
     sass (3.4.21)
     sass-rails (5.0.4)
@@ -165,6 +176,8 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.4)
+      rack (>= 1.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -178,6 +191,7 @@ DEPENDENCIES
   annotate
   byebug
   coffee-rails (~> 4.1.0)
+  devise
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails

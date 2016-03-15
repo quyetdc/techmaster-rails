@@ -57,3 +57,5 @@ end
 gem "font-awesome-rails"
 
 gem 'rails_admin'
+
+gem 'devise'
