@@ -31,8 +31,13 @@
       <!--LOGO END-->
       <div class="kode-navigation">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="users/sign_in">Sign in</a></li>
+          <li><%= link_to 'Home', root_path %></li>
+          <% if user_signed_in? %>
+              <li> <%= link_to 'Sign out', destroy_user_session_path, method: 'delete' %></li>
+          <% else %>
+              <li> <%= link_to 'Sign in', new_user_session_path %></li>
+          <% end %>
+
           <!--<li><a href="blog.html">Our Blog</a>-->
             <!--<ul>-->
               <!--<li><a href="blog.html">Blog</a></li>-->
