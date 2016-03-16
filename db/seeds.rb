@@ -51,7 +51,9 @@ While Harry grapples with a past that refuses to stay where it belongs, his youn
         about: "Maybe she’s on a photo shoot in Zanzibar. Maybe she’s making people laugh on TV. But all Chrissy Teigen really wants to do is talk about dinner. Or breakfast. Lunch gets some love, too.
 For years, she’s been collecting, cooking, and Instagramming her favorite recipes, and here they are: from breakfast all day to John’s famous fried chicken with spicy honey butter to her mom’s Thai classics.
 Salty, spicy, saucy, and fun as sin (that’s the food, but that’s Chrissy, too), these dishes are for family, for date night at home, for party time, and for a few life-sucks moments (salads). You’ll learn the importance of chili peppers, the secret to cheesy-cheeseless eggs, and life tips like how to use bacon as a home fragrance, the single best way to wake up in the morning, and how not to overthink men or Brussels sprouts. Because for Chrissy Teigen, cooking, eating, life, and love are one and the same.",
-        image: 'http://ecx.images-amazon.com/images/I/51HGuoYiOZL._SX379_BO1,204,203,200_.jpg'
+        image: 'http://ecx.images-amazon.com/images/I/51HGuoYiOZL._SX379_BO1,204,203,200_.jpg',
+        is_new: 1,
+        is_best_seller: 1
     }
 ]
 
