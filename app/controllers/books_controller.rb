@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!, only: [:like, :favourites]
+
   # GET /books
   # GET /books.json
   def index
@@ -59,6 +61,24 @@ class BooksController < ApplicationController
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def like
+    @book = Book.find(params[:book_id])
+
+    collection = if current_user.collection
+                   current_user.collection
+                 else
+                   Collection.create(user: current_user)
+                 end
+
+    collection.books << @book
+
+  end
+
+
+  def favourites
+
   end
 
   private

@@ -24,9 +24,20 @@
                 <p>
                   <%= truncate(book.about, length: 200) %>
                 </p>
-                <a href="#"><i class="fa fa-heart"></i></a>
-                <a href="#"><i class="fa fa-cart-plus"></i></a>
-                <a href="#"><i class="fa fa-link"></i></a>
+
+                <%= form_tag(books_like_path, remote: true) do %>
+                   <%= hidden_field_tag :book_id, book.id %>
+                   <a book-id="<%= book.id %>"
+                      class="book-like-btn <%= 'like-btn-active' if current_user && current_user.collection && (current_user.collection.books.include? book) %>"
+                      style="cursor: pointer;">
+
+                     <i class="fa fa-heart"></i>
+                   </a>
+
+                    <a href="#"><i class="fa fa-cart-plus"></i></a>
+                    <a href="#"><i class="fa fa-link"></i></a>
+                <% end %>
+
               </div>
             </div>
           </div>

@@ -20,7 +20,10 @@ class Book < ActiveRecord::Base
   enum is_best_seller: [:normal_seller, :best_seller]
 
   has_many :books_categories
-  has_many :categories, through: :books_categories
+  has_many :categories, through: :books_categorie
+
+  has_many :book_collections
+  has_many :collectionss, through: :book_collections
 
   validates :name, uniqueness: true
 end
