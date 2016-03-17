@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
-  before_action :authenticate_user!, only: [:like, :favourites]
+  before_action :authenticate_user!, only: [:like, :wishlist]
+
+  before_action :set_current_collect, only: [:like, :wishlist]
 
   # GET /books
   # GET /books.json
@@ -66,19 +68,19 @@ class BooksController < ApplicationController
   def like
     @book = Book.find(params[:book_id])
 
-    collection = if current_user.collection
+    @collection = if current_user.collection
                    current_user.collection
                  else
                    Collection.create(user: current_user)
                  end
 
-    collection.books << @book
+    @collection.books << @book
 
   end
 
 
-  def favourites
-
+  def wishlist
+    @books = @collection.books
   end
 
   private
@@ -90,5 +92,13 @@ class BooksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
       params.require(:book).permit(:name, :about, :publisher, :year, :isbn, :price, :image)
+    end
+
+    def set_current_collect
+      @collection = if current_user.collection
+                      current_user.collection
+                    else
+                      Collection.create(user: current_user)
+                    end
     end
 end

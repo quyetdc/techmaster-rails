@@ -1,0 +1,28 @@
+<div class="col-md-9">
+  <div class="row">
+
+    <% @books.each do |book| %>
+        <!--PRODUCT GRID START-->
+        <div class="col-md-4 col-sm-6">
+          <div class="best-seller-pro">
+            <figure>
+              <%= image_tag book.image %>
+            </figure>
+            <div class="kode-text">
+              <h3><%= book.name %></h3>
+            </div>
+            <div class="kode-caption">
+              <h3><%= book.name %> </h3>
+              <div class="rating">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+              </div>
+              <p class="price"><%= book.price %> </p>
+              <a href="#" class="add-to-cart">Add To Cart</a>
+            </div>
+          </div>
+        </div>
+        <!--PRODUCT GRID END-->
+    <% end %>
+
+  </div>
+</div>
