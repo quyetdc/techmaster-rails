@@ -11,6 +11,19 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
+  # Search - using searchkick, a gem based on elasticsearch
+  # http://blog.ragnarson.com/2013/10/10/adding-search-and-autocomplete-to-a-rails-app-with-elasticsearch.html
+  def search
+    @books = Book.search(params[:query])
+    respond_to do |format|
+      format.html { render :index }
+    end
+  end
+
+  def autocomplete
+    render json: Book.search(params[:query], autocomplete: true, limit: 10).map(&:name)
+  end
+
   # GET /books/1
   # GET /books/1.json
   def show

@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require books_template.js
+//= require typeahead.bundle.js
 //= require_tree .

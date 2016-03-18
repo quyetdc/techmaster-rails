@@ -8,6 +8,18 @@ Rails.application.routes.draw do
   resources :books
 
   post 'books/like' => "books#like"
+  post 'books/search' => "books#search"
+  get 'books/autocomplete' => "books#autocomplete"
+
+  # we can use
+  # resources :books, only: :index do
+    # collection do
+    #   post :like
+    #   post :search
+    #   get :autocomplete
+    # end
+  # end
+
   get 'wishlist' => "books#wishlist"
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :get_categories, :get_new_books, :get_best_sellers, only: [:show, :index, :wishlist]
+  before_action :get_categories, :get_new_books, :get_best_sellers, only: [:show, :index, :wishlist, :search]
 
   def get_categories
     @categories = Category.all

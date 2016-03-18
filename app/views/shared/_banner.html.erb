@@ -15,17 +15,20 @@
         <div class="col-md-2">
           <h2>Search<br> Your Books</h2>
         </div>
-        <div class="col-md-6">
-          <input type="text" placeholder="Enter Your Title">
-        </div>
-        <div class="col-md-2">
-          <select></select>
-        </div>
-        <div class="col-md-2">
-          <button>Search</button>
-        </div>
+
+        <%= form_tag books_search_path do %>
+            <div class="col-md-8">
+              <input type="text" placeholder="Enter Your Title" name="query" id="book_search">
+            </div>
+
+            <div class="col-md-2">
+              <button type="submit">Search</button>
+            </div>
+        <% end %>
+
       </div>
     </div>
   </div>
 </div>
 <!--BANNER END-->
+

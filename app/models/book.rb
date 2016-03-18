@@ -15,12 +15,13 @@
 #
 
 class Book < ActiveRecord::Base
+  searchkick autocomplete: ['name']
 
   enum is_new: [:in_stock, :new_arrival]
   enum is_best_seller: [:normal_seller, :best_seller]
 
   has_many :books_categories
-  has_many :categories, through: :books_categorie
+  has_many :categories, through: :books_categories
 
   has_many :book_collections
   has_many :collectionss, through: :book_collections
