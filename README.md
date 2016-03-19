@@ -59,6 +59,8 @@
 
 ```
   $('#book_search').typeahead
-    name: "book"
+    name: "book",
+    hint: null,
+    highlight: null,
     remote: "/books/autocomplete?query=%QUERY"
 ```

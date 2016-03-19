@@ -1,3 +1,5 @@
+<%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.9.3/typeahead.min.js" %>
+
 <!--BANNER START-->
 <div class="kode-inner-banner">
   <div class="banner-overlay"></div>
@@ -18,13 +20,8 @@
 
         <%= form_tag books_search_path do %>
             <div class="col-md-8">
-              <!--<div class="ui search focus">-->
-                <!--<div class="ui icon input">-->
-                  <!--<input class="search" type="text" placeholder="Colors..." autocomplete="off">-->
-                  <!--<i class="search icon"></i>-->
-                <!--</div>-->
-                <!--<div class="results"></div>-->
-              <!--</div>-->
+
+              <%= text_field_tag :query, params[:query], class: "form-control", id: "book_search", autocomplete: "off", placeholder: 'Enter Your Book Title' %>
 
               <!--<input type="text" placeholder="Enter Your Title" name="query" id="book_search">-->
             </div>
@@ -42,51 +39,42 @@
 
 
 <script>
-    var content = [
-        { title: 'Andorra' },
-        { title: 'United Arab Emirates' },
-        { title: 'Afghanistan' },
-        { title: 'Antigua' },
-        { title: 'Anguilla' },
-        { title: 'Albania' },
-        { title: 'Armenia' },
-        { title: 'Netherlands Antilles' },
-        { title: 'Angola' },
-        { title: 'Argentina' },
-        { title: 'American Samoa' },
-        { title: 'Austria' },
-        { title: 'Australia' },
-        { title: 'Aruba' },
-        { title: 'Aland Islands' },
-        { title: 'Azerbaijan' },
-        { title: 'Bosnia' },
-        { title: 'Barbados' },
-        { title: 'Bangladesh' },
-        { title: 'Belgium' },
-        { title: 'Burkina Faso' },
-        { title: 'Bulgaria' },
-        { title: 'Bahrain' },
-        { title: 'Burundi' }
-        // etc
-    ];
-
-    $('.ui.search')
-            .search({
-                source: content
-            })
-    ;
-
-//    // Define API endpoints once globally
-//    $.fn.api.settings.api = {
-//        'search' : '/books/autocomplete/?query={value}'
-//    };
-//    $('.search input')
-//            .api({
-//                debug: true,
-//                action: 'search',
-//                url: '/books/autocomplete/?query={value}',
-//                searchFullText: false,
-//                stateContext: '.ui.input'
-//            })
-//    ;
+    $('#book_search').typeahead({
+        name: "book",
+        hint: null,
+        highlight: null,
+        limit: 10,
+        remote: "/books/autocomplete?query=%QUERY"
+    });
 </script>
+
+<style>
+    .tt-hint {
+        display: none;
+    }
+
+    .twitter-typeahead {
+        width: 100%;
+    }
+
+    #book_search {
+        background-color: #fff !important;
+        width: 100%;
+        color: #2b2b2b;
+        border-radius: 0px;
+    }
+
+    .tt-dropdown-menu {
+        background-color: #ffffff;
+        padding: 15px;
+        border-bottom: 0 none;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+        width: 100%;
+    }
+
+    .tt-suggestion p {
+        padding: 8px 0px;
+        margin-bottom: 2px;
+        /*border-bottom: 1px solid #333333;*/
+    }
+</style>

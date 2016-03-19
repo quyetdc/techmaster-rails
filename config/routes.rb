@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   }
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  resources :books
 
   post 'books/like' => "books#like"
   post 'books/search' => "books#search"
   get 'books/autocomplete' => "books#autocomplete"
+
+  resources :books
 
   # we can use
   # resources :books, only: :index do
