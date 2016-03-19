@@ -1,12 +1,12 @@
-== README
+## README
 
-=== DESCRIPTION
+### DESCRIPTION
 (Todo)
 
-=== INSTALLATION
+### INSTALLATION
 (Todo)
 
-==== Auto complete search
+#### Auto complete search
 
 - Install Elastichsearch by downloading zip file, unzip, cd to elasticsearch directory and run ```bin/elasticsearch -d```
 
@@ -15,6 +15,12 @@
 - Add routes for ```books#search``` and ```books#autocomplete```
 
 - Add ``` searchkick autocomplete: ['name'] ``` to ``` Book ```  model
+
+- You should reindex your search model in Elasticsearch by this command
+
+```
+ rake searchkick:reindex CLASS=Book
+```
 
 - For search and autocomplete function
 

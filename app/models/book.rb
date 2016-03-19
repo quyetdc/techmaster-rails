@@ -15,7 +15,7 @@
 #
 
 class Book < ActiveRecord::Base
-  searchkick autocomplete: ['name']
+  searchkick  match: :word_start, searchable: [:name]
 
   enum is_new: [:in_stock, :new_arrival]
   enum is_best_seller: [:normal_seller, :best_seller]

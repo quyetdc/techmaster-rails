@@ -8,9 +8,5 @@ ready = ->
     $(this).parent().submit()
   )
 
-  $('#book_search').typeahead
-    name: "book"
-    remote: "/books/autocomplete?query=%QUERY"
-
 $(document).ready(ready)
 $(document).on('page:load', ready)

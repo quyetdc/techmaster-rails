@@ -21,7 +21,12 @@ class BooksController < ApplicationController
   end
 
   def autocomplete
-    render json: Book.search(params[:query], autocomplete: true, limit: 10).map(&:name)
+    render json: Book.search(params[:query], {
+        fields: ["name"],
+        limit: 10,
+        load: false,
+        misspellings: {below: 5}
+    }).map(&:name)
   end
 
   # GET /books/1
