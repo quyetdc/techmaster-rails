@@ -64,3 +64,100 @@
     highlight: null,
     remote: "/books/autocomplete?query=%QUERY"
 ```
+
+#### Send mail SUBSCRIBE
+
+- Cài đặt mailcatcher để test ở môi trường development (xem hướng dẫn chi tiết ```http://mailcatcher.me/```)
+1 - gem install mailcatcher
+2 - mailcatcher
+3 - Go to http://localhost:1080/
+4 - Send mail through smtp://localhost:1025
+
+- Thêm model Subscriber
+tạo bảng ```subscribers```
+ ```
+ class CreateSubscribers < ActiveRecord::Migration
+  def change
+    create_table :subscribers do |t|
+      t.string :email
+      t.timestamps null: false
+    end
+  end
+end
+```
+validate email in Subscriber 
+ ```
+ VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+ validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
+```
+
+Tạo đối tượng Notifier kế thừa từ ActionMailer::Base trong thư mục ```mailers```
+```
+class Notifier < ActionMailer::Base
+  default from: '<colin@bookstore.co>'
+  default to: '<colin@bookstore.co>'
+end
+```
+thêm 1 hàm subscribe để gửi mail tới ```subscriber```
+ ```
+ def subscribe(subscriber)
+    mail to: subscriber.email
+  end
+ ```
+ Thêm ```subscribes_controller``` để xử lý ```subscriber```, thêm action create để tạo mới ```subscriber```
+ ```
+ class SubscribesController < ApplicationController
+  def create
+    subscriber = Subscriber.new(email: params[:email])
+
+    if subscriber.valid? && subscriber.save
+      Notifier.subscribe(subscriber).deliver
+      render :json => { :result => "success" }
+    else
+      render :json => { :result => "not-success", :massage => subscriber.errors.full_messages }
+    end
+  end
+
+ end
+ ```
+ code xử lý ở view trên file ```_new_letter.html.erb```
+ ```
+   <!--SECTION CONTENT END-->
+    <div class="input-container subscriber_notice">
+      <span class="subscriber_notice"></spam>
+    </div>
+    <div class="input-container subscriber_form">
+      <input type="email" id="subscriber_email" placeholder="Subscribe us" >
+      <button class="subcribe">Subcribe</button>
+    </div>
+    <div class="input-container subscriber_success">
+      <p class="form-success">Thanks for subscribing</p>
+    </div>
+ ```
+ xử lý ajax
+ ```
+ $(document).on("click",".subcribe",function(){
+    var email = $("#subscriber_email").val();
+    var url = "<%= subscribe_path %>";
+    $.ajax({
+      url: url,
+      type: "post",
+      dataType: "json",
+      data: 'email=' + email,
+      asycn: true,
+      success: function(data) {
+        if (data.result == "success"){
+          $('.subscriber_form').hide();
+          $('.subscriber_notice').hide();
+          $('.subscriber_success').show();
+        }else{
+          $('.subscriber_notice').html(data.massage);
+          $('.subscriber_notice').show();
+        }
+      },
+      error: function(err){
+      }
+    });
+ ```
