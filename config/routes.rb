@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   # end
 
   get 'wishlist' => "books#wishlist"
+  post 'subscribe' => "subscribes#create", as: 'subscribe'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -7,10 +7,45 @@
       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
     </div>
     <!--SECTION CONTENT END-->
-    <div class="input-container">
-      <input type="text" placeholder="Subscribe us">
-      <button>Subcribe</button>
+    <div class="input-container subscriber_notice">
+      <span class="subscriber_notice"></spam>
+    </div>
+    <div class="input-container subscriber_form">
+      <input type="email" id="subscriber_email" placeholder="Subscribe us" >
+      <button class="subcribe">Subcribe</button>
+    </div>
+    <div class="input-container subscriber_success">
+      <p class="form-success">Thanks for subscribing</p>
     </div>
   </div>
 </section>
 <!--NEWSLETTER END-->
+
+<script type="text/javascript">
+  $( "#subscriber_email" ).keyup(function() {
+    $('.subscriber_notice').hide();
+  });
+  $(document).on("click",".subcribe",function(){
+    var email = $("#subscriber_email").val();
+    var url = "<%= subscribe_path %>";
+    $.ajax({
+      url: url,
+      type: "post",
+      dataType: "json",
+      data: 'email=' + email,
+      asycn: true,
+      success: function(data) {
+        if (data.result == "success"){
+          $('.subscriber_form').hide();
+          $('.subscriber_notice').hide();
+          $('.subscriber_success').show();
+        }else{
+          $('.subscriber_notice').html(data.massage);
+          $('.subscriber_notice').show();
+        }
+      },
+      error: function(err){
+      }
+    });
+  });
+</script>
