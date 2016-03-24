@@ -3,7 +3,7 @@ class SubscribesController < ApplicationController
     subscriber = Subscriber.new(email: params[:email])
 
     if subscriber.valid? && subscriber.save
-      Notifier.subscribe(subscriber).deliver
+      Notifier.subscribe(subscriber).deliver_now
       render :json => { :result => "success" }
     else
       render :json => { :result => "not-success", :massage => subscriber.errors.full_messages }

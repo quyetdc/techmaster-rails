@@ -182,6 +182,8 @@ GEM
       activemodel
       elasticsearch (>= 1)
       hashie
+    sendgrid (1.2.4)
+      json
     slop (3.6.0)
     spring (1.6.4)
     sprockets (3.5.2)
@@ -228,6 +230,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   searchkick
+  sendgrid
   spring
   sqlite3
   turbolinks
