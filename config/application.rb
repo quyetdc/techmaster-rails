@@ -24,5 +24,19 @@ module Bookstore
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+        :address        => 'smtp.sendgrid.net',
+        :port           =>  587,
+        :domain         => Settings.domain,
+        :authentication =>  :plain,
+        :user_name      =>  Settings.mailer.user_name,
+        :password       =>  Settings.mailer.password,
+        :enable_starttls_auto => true
+    }
   end
 end

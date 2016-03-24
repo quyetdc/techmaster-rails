@@ -1,10 +1,15 @@
 class Notifier < ActionMailer::Base
- 
-  default from: '<colin@bookstore.co>'
-  default to: '<colin@bookstore.co>'
+
+  include SendGrid
+
+  sendgrid_category :use_subject_lines
+  sendgrid_enable   :ganalytics, :opentrack
+
+  default from: Settings.mailer.from_default
 
   def subscribe(subscriber)
-    mail to: subscriber.email
+    sendgrid_category "Welcome"
+    mail to: subscriber.email, subject: "Welcome bookstore"
   end
 
 end

@@ -63,3 +63,7 @@ gem 'rails_admin'
 gem 'devise'
 
 gem "searchkick"
+
+gem 'sendgrid'
+
+gem 'config'
