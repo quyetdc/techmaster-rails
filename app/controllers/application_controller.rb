@@ -18,8 +18,6 @@ class ApplicationController < ActionController::Base
   end
 
   def get_prominent_authors
-
-    @prominent_authors = Author.first(3)
-    # Author.joins("INNER JOIN author_books ON author_books.author_id = author.id")
+    @prominent_authors = Author.top_3
   end
 end
