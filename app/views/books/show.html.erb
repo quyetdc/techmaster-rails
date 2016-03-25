@@ -24,7 +24,11 @@
           <h4>
             $<%= @book.price %>
           </h4>
-          <p>Author : <span class="color">Robert L. Lukdke</span></p>
+          <p>Author:
+            <% @book.authors.each do |author| %>
+              <span class="color"><%= link_to author.name, author_path(author) %></span><br/>
+            <% end %>
+          </p>
         </div>
         <div class="book-text">
           <p>
@@ -35,7 +39,7 @@
         <div class="book-text">
           <p>Category: Books.</p>
           <p>Tag: books.</p>
-          <p>Author: Daniel Abraham</p>
+          <p>Author:  </p>
           <p>Publisher: Journal inc</p>
           <p>Product ID: 1100</p>
         </div>
@@ -47,8 +51,6 @@
   </div>
 </div>
 <!--BOOK DETAIL END-->
-
-
 
 
 <!--PRODUCT REVIEW TABS START-->

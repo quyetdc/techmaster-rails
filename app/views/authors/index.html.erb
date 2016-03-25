@@ -1,0 +1,40 @@
+<h1>Authors</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Birthday</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @authors.each_with_index do |author, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= image_tag author.image, class: "avata_author_index" %></td>
+        <td><%= author.name %></td>
+        <td><%= author.birthday %></td>
+        <td><%= author.phone %></td>
+        <td><%= author.address %></td>
+        <td>
+          <%= link_to 'Show',
+                      author_path(author), :class => 'btn btn-default btn-xs' %>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_author_path(author), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      author_path(author),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New Author", new_author_path, :class => 'btn btn-default'  %>

@@ -52,6 +52,12 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
+        authors = params[:book][:authors].split(',')
+        unless authors.empty?
+          authors.each do |author|
+            AuthorBook.find_or_create_by(book: @book, author_id: author.to_i)
+          end
+        end
         format.html { redirect_to @book, notice: 'Book was successfully created.' }
         format.json { render :show, status: :created, location: @book }
       else

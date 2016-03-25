@@ -1,0 +1,40 @@
+<div class="col-md-9">
+<!--author DETAIL START-->
+<div class="lib-author-detail">
+  <h2>Profile Author</h2>   
+  <div class="row">
+    <div class="col-md-4">
+      <div class="kode-thumb avata-author">
+        <%= image_tag @author.image %>
+      </div>
+    </div>
+
+    <div class="col-md-8"> 
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td><%= @author.name %></td>
+          </tr>
+          <tr>
+            <td>Birthday</td>
+            <td><%= @author.birthday %></td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td><%= @author.phone %></td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td><%= @author.address %></td>
+          </tr>
+          <tr>
+            <td>Birthday</td>
+            <td><%= simple_format(@author.profile) %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!--author DETAIL END-->
