@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'books/autocomplete' => "books#autocomplete"
 
   resources :books
+  resources :authors
 
   # we can use
   # resources :books, only: :index do

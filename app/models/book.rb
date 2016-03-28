@@ -24,7 +24,10 @@ class Book < ActiveRecord::Base
   has_many :categories, through: :books_categories
 
   has_many :book_collections
-  has_many :collectionss, through: :book_collections
+  has_many :collections, through: :book_collections
+
+  has_many :author_books
+  has_many :authors, through: :author_books
 
   validates :name, uniqueness: true
 end
