@@ -85,13 +85,13 @@
 
   <!--AUTHOR WIDGET START-->
   <div class="widget widget-new-arrival">
-    <h2>Author</h2>
+    <h2>Top Author</h2>
     <ul class="bxslider">
       <% @prominent_authors.each do |author| %>
           <li>
             <div class="new-arrival">
               <div class="kode-thumb">
-                <a href="#"><%= image_tag author.image %></a>
+                <a href="<%= author_path(author) %>"><%= image_tag author.image %></a>
               </div>
               <div class="kode-text">
                 <h3><%= author.name %></h3>

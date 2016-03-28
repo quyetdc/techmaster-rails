@@ -11,7 +11,7 @@ class Author < ActiveRecord::Base
 
   def self.top_3
     select('authors.*, COUNT(author_books.id) AS author_books_count').
-      joins(:author_books).                                                   
+      joins('LEFT JOIN author_books').                                               
       group('authors.id').
       order('author_books_count DESC').
       limit(3)
