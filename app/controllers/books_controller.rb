@@ -94,7 +94,12 @@ class BooksController < ApplicationController
                    Collection.create(user: current_user)
                  end
 
-    @collection.books << @book
+    if @collection.books.include? @book
+      @collection.books.delete @book
+    else
+      @collection.books << @book
+    end
+
 
     respond_to do |format|
       format.js

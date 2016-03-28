@@ -17,7 +17,8 @@ ready = ->
         },
         dataType: "json",
         success: (data) ->
-          console.log(data)
+          console.log('success');
+          $("#book-show-add-to-wishlist").toggleClass('like-btn-active');
         ,
         error: (jqXHR, textStatus) ->
           alert( "Request failed: " + textStatus )

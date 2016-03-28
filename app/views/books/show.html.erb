@@ -46,7 +46,8 @@
 
         <% if user_signed_in? %>
             <a href="#" class="add-to-cart">Add To Cart</a>
-            <a class="add-to-cart" book-id="<%= @book.id %>" id="book-show-add-to-wishlist">Add To Wishlist</a>
+            <a class="add-to-cart <%= 'like-btn-active' if current_user && current_user.collection && (current_user.collection.books.include? @book) %>"
+               book-id="<%= @book.id %>" id="book-show-add-to-wishlist">Add To Wishlist</a>
             <a href="#" class="add-to-cart">Get a Quote</a>
         <% end %>
 
