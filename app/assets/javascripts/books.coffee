@@ -2,12 +2,27 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 ready = ->
-  console.log('balala')
   bookLikeBtn = $(".book-like-btn")
   bookLikeBtn.click(->
     $(this).parent().submit()
   )
 
+  if $("#book-show-add-to-wishlist").length > 0
+    $("#book-show-add-to-wishlist").click( ->
+      $.ajax({
+        url: "//" + location.host + "/books/like"
+        method: "POST",
+        data: {
+          book_id : $(this).attr('book-id')
+        },
+        dataType: "json",
+        success: (data) ->
+          console.log(data)
+        ,
+        error: (jqXHR, textStatus) ->
+          alert( "Request failed: " + textStatus )
+      })
+    )
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

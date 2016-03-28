@@ -96,6 +96,12 @@ class BooksController < ApplicationController
 
     @collection.books << @book
 
+    respond_to do |format|
+      format.js
+      format.html
+      format.json { render json: { status: :ok } }
+    end
+
   end
 
 

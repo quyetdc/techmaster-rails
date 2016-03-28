@@ -43,9 +43,13 @@
           <p>Publisher: Journal inc</p>
           <p>Product ID: 1100</p>
         </div>
-        <a href="#" class="add-to-cart">Add To Cart</a>
-        <a href="#" class="add-to-cart">Add To Wishlist</a>
-        <a href="#" class="add-to-cart">Get a Quote</a>
+
+        <% if user_signed_in? %>
+            <a href="#" class="add-to-cart">Add To Cart</a>
+            <a class="add-to-cart" book-id="<%= @book.id %>" id="book-show-add-to-wishlist">Add To Wishlist</a>
+            <a href="#" class="add-to-cart">Get a Quote</a>
+        <% end %>
+
       </div>
     </div>
   </div>
