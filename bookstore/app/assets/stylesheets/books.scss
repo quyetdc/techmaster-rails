@@ -16,3 +16,18 @@
 #book-show-add-to-wishlist {
   cursor: pointer;
 }
+
+.banner-search button {
+  &:hover {
+    background-color: #ffffff;
+    color: #32B5F3;
+  }
+}
+
+.books-listing-3 .kode-thumb {
+  min-height: 300px;
+}
+
+.lib-related-products .best-seller-pro {
+  min-height: 450px;
+}

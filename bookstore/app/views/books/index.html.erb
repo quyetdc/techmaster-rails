@@ -4,17 +4,20 @@
       <% @books.each do |book| %>
 
         <!--PRODUCT GRID START-->
-        <div class="col-md-4 col-sm-6">
+        <div class="col-md-3">
           <div class="books-listing-3">
             <div class="kode-thumb">
 
               <%= link_to book_path(book) do %>
-                <%= image_tag book.image, width: '208px', height: '250px' %>
+                <%= image_tag book.image %>
               <% end %>
 
             </div>
             <div class="kode-text">
-              <p class="price">$80.75<span>90.75$</span></p>
+              <p class="price">
+                <%= number_with_delimiter(book.price, :delimiter => ',') %> VND
+                <span><%= number_with_delimiter(book.price*1.2, :delimiter => ',') %> VND</span>
+              </p>
 
               <h3>
                 <%= link_to truncate(book.name, length: 12), book_path(book) %>

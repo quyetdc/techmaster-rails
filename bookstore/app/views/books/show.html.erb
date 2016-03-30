@@ -22,7 +22,7 @@
         </div>
         <div class="product-price">
           <h4>
-            $<%= @book.price %>
+            <%= number_with_delimiter(@book.price, :delimiter => ',') %> VND
           </h4>
           <p>Author:
             <% @book.authors.each do |author| %>
@@ -153,73 +153,33 @@
   <!--TAB PANEL END-->
 </div>
 <!--PRODUCT REVIEW TABS END-->
+
+
 <!--RELATED PRODUCTS START-->
 <div class="lib-related-products">
   <h2>Related Books</h2>
   <div class="row">
-    <!--PRODUCT GRID START-->
-    <div class="col-md-4">
-      <div class="best-seller-pro">
-        <figure>
-          <img src="images/book7.png" alt="">
-        </figure>
-        <div class="kode-text">
-          <h3><a href="#">Burnt Siena</a></h3>
-        </div>
-        <div class="kode-caption">
-          <h3>Art History Mystery</h3>
-          <div class="rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    <% @related_books.each do |book| %>
+        <!--PRODUCT GRID START-->
+        <div class="col-md-4">
+          <div class="best-seller-pro">
+            <figure>
+              <%= image_tag book.image %>
+            </figure>
+            <div class="kode-text">
+              <h3><a href=""><%= book.name %></a></h3>
+            </div>
+            <div class="kode-caption">
+              <h3><%= book.name %></h3>
+              <div class="rating">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+              </div>
+              <p class="price"><%= number_with_delimiter(book.price, :delimiter => ',') %> VND</p>
+            </div>
           </div>
-          <p>Sara Wisseman</p>
-          <p class="price">$334.50</p>
-          <a href="#" class="add-to-cart">Add To Cart</a>
         </div>
-      </div>
-    </div>
-    <!--PRODUCT GRID END-->
-    <!--PRODUCT GRID START-->
-    <div class="col-md-4">
-      <div class="best-seller-pro">
-        <figure>
-          <img src="images/book8.png" alt="">
-        </figure>
-        <div class="kode-text">
-          <h3><a href="#">Chrysalis</a></h3>
-        </div>
-        <div class="kode-caption">
-          <h3>The Brave Girl</h3>
-          <div class="rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-          </div>
-          <p>William S.</p>
-          <p class="price">$24.75</p>
-          <a href="#" class="add-to-cart">Add To Cart</a>
-        </div>
-      </div>
-    </div>
-    <!--PRODUCT GRID END-->
-    <!--PRODUCT GRID START-->
-    <div class="col-md-4">
-      <div class="best-seller-pro">
-        <figure>
-          <img alt="" src="images/book12.png">
-        </figure>
-        <div class="kode-text">
-          <h3><a href="#">Dead Water</a></h3>
-        </div>
-        <div class="kode-caption">
-          <h3>Dead Water in the Sea</h3>
-          <div class="rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-          </div>
-          <p>Ann Grannger</p>
-          <p class="price">$777.75</p>
-          <a class="add-to-cart" href="#">Add To Cart</a>
-        </div>
-      </div>
-    </div>
-    <!--PRODUCT GRID END-->
+        <!--PRODUCT GRID END-->
+    <% end %>
   </div>
 </div>
 <!--RELATED PRODUCTS END-->
