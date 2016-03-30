@@ -10,11 +10,11 @@ class ApplicationController < ActionController::Base
   end
 
   def get_new_books
-    @new_arrivals = Book.new_arrival
+    @new_arrivals = Book.new_arrival.last(5)
   end
 
   def get_best_sellers
-    @best_sellers = Book.best_seller
+    # @best_sellers = Book.best_seller
   end
 
   def get_prominent_authors

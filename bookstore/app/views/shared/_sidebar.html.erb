@@ -19,6 +19,20 @@
     <a href="#" class="filter">Filter</a>
   </div>
   <!--PRICE FILTER WIDGET END-->
+
+  <!--CATEGORY WIDGET START-->
+  <div class="widget widget-categories">
+    <h2>Categories</h2>
+    <ul>
+
+      <% @categories.each do |category| %>
+          <li><a href="#"><%= category.name %> </a></li>
+      <% end %>
+
+    </ul>
+  </div>
+  <!--CATEGORY WIDGET END-->
+
   <!--NEW ARRIVAL WIDGET START-->
   <div class="widget widget-new-arrival">
     <h2>New Arrival</h2>
@@ -35,45 +49,6 @@
                 <h3><%= book.name %></h3>
                 <p>
                   <%= truncate(book.about, length: 200) %>
-                </p>
-              </div>
-            </div>
-          </li>
-      <% end %>
-    </ul>
-  </div>
-  <!--NEW ARRIVAL WIDGET END-->
-
-  <!--CATEGORY WIDGET START-->
-  <div class="widget widget-categories">
-    <h2>Categories</h2>
-    <ul>
-
-      <% @categories.each do |category| %>
-          <li><a href="#"><%= category.name %> </a></li>
-      <% end %>
-
-    </ul>
-  </div>
-  <!--CATEGORY WIDGET END-->
-
-
-
-  <!--NEW ARRIVAL WIDGET START-->
-  <div class="widget widget-new-arrival">
-    <h2>Best Sellers</h2>
-    <ul class="bxslider">
-      <% @best_sellers.each do |book| %>
-          <li>
-            <div class="new-arrival">
-              <div class="kode-thumb">
-                <a href="#"><%= image_tag book.image %></a>
-                <!--<a href="#"><img src="images/new-arrival2.png" alt=""></a>-->
-              </div>
-              <div class="kode-text">
-                <h3><%= book.name %></h3>
-                <p>
-                  <%= truncate(book.about, length: 150) %>
                 </p>
               </div>
             </div>

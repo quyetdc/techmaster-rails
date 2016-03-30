@@ -1,40 +1,104 @@
 <div class="col-md-9">
-<!--author DETAIL START-->
-<div class="lib-author-detail">
-  <h2>Profile Author</h2>   
-  <div class="row">
-    <div class="col-md-4">
-      <div class="kode-thumb avata-author">
-        <%= image_tag @author.image %>
-      </div>
-    </div>
 
-    <div class="col-md-8"> 
-      <table class="table">
-        <tbody>
-          <tr>
-            <td>Name</td>
-            <td><%= @author.name %></td>
-          </tr>
-          <tr>
-            <td>Birthday</td>
-            <td><%= @author.birthday %></td>
-          </tr>
-          <tr>
-            <td>Phone</td>
-            <td><%= @author.phone %></td>
-          </tr>
-          <tr>
-            <td>Address</td>
-            <td><%= @author.address %></td>
-          </tr>
-          <tr>
-            <td>Birthday</td>
-            <td><%= simple_format(@author.profile) %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <!--CONTENT START-->
+  <div class="kode-content">
+    <!--AUTHOR DETAIL SECTION START-->
+    <section class="kode-author-detail-2">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="kode-thumb">
+              <%= image_tag @author.image %>
+            </div>
+          </div>
+
+          <div class="col-md-7">
+            <div class="kode-text">
+              <h2><%= @author.name  %></h2>
+              <h5>Author</h5>
+              <div class="contact-box">
+                <div class="row">
+                  <div class="col-md-12">
+                    <table>
+                      <tr>
+                        <td><i class="fa fa-phone"></i></td>
+                        <td>Phone No:</td>
+                        <td><%= @author.phone ? @author.phone : '333-365-9874' %></td>
+                      </tr>
+                      <tr>
+                        <td><i class="fa fa-envelope-o"></i></td>
+                        <td>Email ID:</td>
+                        <td><%= @author.email ? @author.email : 'info@colin-bookstore.com' %></td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="social-icon">
+                      <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p>
+              <% if @author.profile != '' %>
+                  <%= @author.profile %>
+              <% else %>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+              <% end %>
+              </p>
+
+              <div class="signature">
+                <%= image_tag 'signature-1' %>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!--AUTHOR DETAIL SECTION END-->
+
+
+    <!--RECENT RELEASE SECTION START-->
+    <section class="recent-release">
+        <div class="section-heading-1">
+          <h2> Published Books</h2>
+          <div class="kode-icon"><i class="fa fa-book"></i></div>
+        </div>
+        <div class="owl-release owl-theme">
+          <% @books.each do |book| %>
+              <div class="col-md-4">
+                <div class="item">
+                  <div class="book-released">
+                    <div class="kode-thumb">
+                      <a href="#">
+                        <%= image_tag book.image %>
+                      </a>
+                      <div class="cart-btns">
+                        <a href="#" data-toggle="tooltip" title="582"><i class="fa fa-eye"></i></a>
+                        <a href="#" data-toggle="tooltip" title="Add To Cart"><i class="fa fa-shopping-cart"></i></a>
+                        <a href="#" data-toggle="tooltip" title="Add To Wishlist"><i class="fa fa-heart-o"></i></a>
+                      </div>
+                    </div>
+                    <div class="kode-text">
+                      <h3>
+                        <%= book.name %>
+                      </h3>
+                      <div class="rating">
+                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+    </section>
+    <!--RECENT RELEASE SECTION END-->
   </div>
 </div>
-<!--author DETAIL END-->

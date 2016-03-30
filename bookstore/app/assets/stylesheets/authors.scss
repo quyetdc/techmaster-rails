@@ -13,3 +13,33 @@
 .avata_author_index {
   width: 100px;
 }
+
+.kode-author-detail-2 {
+  //padding-right: 20px;
+  .kode-thumb {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+
+
+  }
+
+  .kode-text {
+    padding-left: 0px;
+  }
+
+  .social-icon ul {
+    text-align: left;
+    margin-top: 12px;
+    li {
+      text-align: center;
+    }
+  }
+}
+
+.recent-release {
+  .kode-thumb {
+    min-height: 350px;
+  }
+}
