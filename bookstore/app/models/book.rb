@@ -14,6 +14,7 @@
 #  updated_at     :datetime         not null
 #  is_new         :integer          default(0)
 #  is_best_seller :integer          default(0)
+#  original_price :integer
 #
 
 class Book < ActiveRecord::Base

@@ -8,6 +8,11 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
+# Indexes
+#
+#  index_book_collections_on_book_id        (book_id)
+#  index_book_collections_on_collection_id  (collection_id)
+#
 
 class BookCollection < ActiveRecord::Base
   belongs_to :book
