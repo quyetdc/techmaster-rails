@@ -1,0 +1,4 @@
+domain: colin-bookstore.co
+mailer:
+  user_name: your_sendgrid_user_name@example.com
+  password: your_sendgrid_user_password
