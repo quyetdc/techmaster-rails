@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       f.title(text: "Your Finance This Year")
       f.xAxis(categories: this_year_months)
       f.series(name: "Incomes", data: months_incomes((1..current_month).to_a))
-      f.series(name: "Population in Millions", data: months_costs((1..current_month).to_a), color: '#FF0000')
+      f.series(name: "Costs", data: months_costs((1..current_month).to_a), color: '#FF0000')
 
       f.yAxis [
                   {title: {text: "Amount in USD", margin: 70} }
