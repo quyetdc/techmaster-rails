@@ -12,3 +12,7 @@
   font-size: 140%;
   font-weight: 400;
 }
+
+.btn-primary, .btn-danger {
+  color: #fff !important;
+}
