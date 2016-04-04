@@ -8,7 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:amount) %></th>
       <th><%= model_class.human_attribute_name(:categories) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:issued_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
         <td><%= link_to cost.id, cost_path(cost) %></td>
         <td><%= cost.amount %></td>
         <td><%= (cost.categories.all.map {|t| t.name}).join(', ') %></td>
-        <td><%=l cost.created_at %></td>
+        <td><%= cost.issued_at ? format_date(cost.issued_at) : '' %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_cost_path(cost), :class => 'btn btn-default btn-xs' %>
