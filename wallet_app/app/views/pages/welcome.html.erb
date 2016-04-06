@@ -1,4 +1,35 @@
-<%= high_chart("dashboard", @chart) %>
+<div class="row">
+  <%= form_tag root_path do %>
+      <div class="col-md-3">
+        <%= select_tag 'month',
+                       options_for_select(
+                               select_options_for_months(months_of_year Time.now.year).prepend(['All', 0]),
+                               session[:wl_month]
+                       ),
+                       class: 'form-control' %>
+      </div>
+
+      <!-- For now I just allow user to choose current year -->
+      <div class="col-md-3">
+        <%= select_tag 'year', options_for_select([[Time.now.year, Time.now.year]]), class: 'form-control'%>
+      </div>
+
+      <%= submit_tag 'Get', class: 'btn btn-default' %>
+  <% end %>
+</div>
+
+<div class="row" style="height: 50px"></div>
+
+<% if params[:month] && params[:year] %>
+    <% if @incomes_chart %>
+        <%= high_chart("dashboard", @incomes_chart) %>
+    <% else %>
+        <div class="text-danger"> No data for this month </div>
+    <% end %>
+<% else %>
+    <%= high_chart("dashboard", @chart) %>
+<% end %>
+
 
 <script>
     $(document).ready(function(){
