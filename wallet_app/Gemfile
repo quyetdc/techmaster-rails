@@ -56,3 +56,5 @@ gem 'omniauth-facebook'
 gem 'lazy_high_charts'
 
 gem "figaro"
+
+gem 'annotate'
