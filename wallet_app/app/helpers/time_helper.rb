@@ -41,4 +41,18 @@ module TimeHelper
 
     results
   end
+
+  def start_of_month(month, year)
+    current_month = Date.today.month
+    months_ago = (Date.today.year - year ) * 12 + current_month - month
+
+    Date.today.months_ago(months_ago).beginning_of_month
+  end
+
+  def end_of_month(month, year)
+    current_month = Date.today.month
+    months_ago = (Date.today.year - year ) * 12 + current_month - month
+
+    Date.today.months_ago(months_ago).end_of_month
+  end
 end
