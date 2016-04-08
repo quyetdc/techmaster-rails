@@ -73,7 +73,7 @@ class PagesController < ApplicationController
 
     # TODO: CHANGE this to column chart
     if data.count > 0
-      categories_chart = LazyHighCharts::HighChart.new('pie') do |f|
+      categories_chart = LazyHighCharts::HighChart.new('graph2') do |f|
         f.title(text: "Your Categories Finance in #{month}, #{year}")
         f.xAxis(categories: (Category.all.map { |t| t.name }))
         f.series(name: "Incomes", yAxis: 0, data: income_array)
