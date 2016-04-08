@@ -21,7 +21,7 @@
 <div class="row" style="height: 50px"></div>
 
 <% if params[:month] && params[:year] %>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <% if @incomes_chart %>
             <%= high_chart("incomes-dashboard", @incomes_chart) %>
         <% else %>
@@ -29,7 +29,7 @@
         <% end %>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <% if @costs_chart %>
           <%= high_chart("costs-dashboard", @costs_chart) %>
       <% else %>
@@ -37,7 +37,8 @@
       <% end %>
     </div>
 
-    <div class="col-md-4">
+
+    <div class="col-md-12">
       <% if @categories_chart %>
           <%= high_chart("categories-dashboard", @categories_chart) %>
       <% else %>
