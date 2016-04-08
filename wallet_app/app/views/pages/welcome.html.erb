@@ -21,11 +21,29 @@
 <div class="row" style="height: 50px"></div>
 
 <% if params[:month] && params[:year] %>
-    <% if @incomes_chart %>
-        <%= high_chart("dashboard", @incomes_chart) %>
-    <% else %>
-        <div class="text-danger"> No data for this month </div>
-    <% end %>
+    <div class="col-md-4">
+        <% if @incomes_chart %>
+            <%= high_chart("incomes-dashboard", @incomes_chart) %>
+        <% else %>
+            <div class="text-danger"> No income for this month </div>
+        <% end %>
+    </div>
+
+    <div class="col-md-4">
+      <% if @costs_chart %>
+          <%= high_chart("costs-dashboard", @costs_chart) %>
+      <% else %>
+          <div class="text-danger"> No cost in this month </div>
+      <% end %>
+    </div>
+
+    <div class="col-md-4">
+      <% if @categories_chart %>
+          <%= high_chart("categories-dashboard", @categories_chart) %>
+      <% else %>
+          <div class="text-danger"> No data for category in this month </div>
+      <% end %>
+    </div>
 <% else %>
     <%= high_chart("dashboard", @chart) %>
 <% end %>

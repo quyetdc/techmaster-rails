@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
-  include IncomesHelper
-  include CostsHelper
-  include TimeHelper
+  include CategoriesHelper
 
   def welcome
     current_month = Time.now.month
@@ -28,36 +26,12 @@ class PagesController < ApplicationController
     session[:wl_month] = params[:month]
     session[:wl_year] = params[:year]
 
-    current_month = Date.today.month
-    months_ago = (Date.today.year - params[:year].to_i ) * 12 + current_month - params[:month].to_i
-
-    first_moment_of_month = Date.today.months_ago(months_ago).beginning_of_month
-    last_moment_of_month = Date.today.months_ago(months_ago).end_of_month
-
-    _ics = Income.joins(:categories)
-               .where('incomes.issued_at > ? AND incomes.issued_at < ?', first_moment_of_month, last_moment_of_month)
-               .select('categories.name as category_name, incomes.amount as income_amount')
-               .group('categories.name')
-               .sum('incomes.amount')
-
     # binding.pry
     # { next: 1000, shopping: 1000 }
 
-    data = []
-
-    _ics.each do |key, value|
-      data << { name: key, y: value }
-    end
-
-    if data.count > 0
-      @incomes_chart = LazyHighCharts::HighChart.new('pie') do |f|
-        f.title(text: "Your Finance in #{params[:month]}, #{params[:year]}")
-        f.series(name: "Incomes", data: data)
-
-        f.legend(align: 'right', verticalAlign: 'top', y: 75, x: -50, layout: 'vertical')
-        f.chart({defaultSeriesType: "pie"})
-      end
-    end
+    @incomes_chart = month_income_piechart params[:month].to_i, params[:year].to_i
+    @costs_chart = month_costs_piechart params[:month].to_i, params[:year].to_i
+    @categories_chart = month_categories_piechart params[:month].to_i, params[:year].to_i
 
     render :welcome
   end
