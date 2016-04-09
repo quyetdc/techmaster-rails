@@ -9,7 +9,9 @@
 # }
 
 h = Hash.new              ## khởi tạo
-h[:key] = "value"         ## Gán giá trị, sử dụng symbol hoặc string
+h[:key] = "value"         ## Gán giá trị, sử dụng symbol
+h["key"] = "value"        ## Gán giá trị, sử dụng string
+
 h                         ## {:key => "value"}
 h[:key]                   ## "value"
 h.has_key?(:key)          ## true
