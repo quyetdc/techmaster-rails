@@ -4,7 +4,7 @@ class IncomesController < ApplicationController
   # GET /incomes
   # GET /incomes.json
   def index
-    @incomes = Income.all
+    @incomes = Income.order('created_at ASC').page(params[:page]).per(20)
   end
 
   # GET /incomes/1

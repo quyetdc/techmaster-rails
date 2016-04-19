@@ -4,7 +4,7 @@ class CostsController < ApplicationController
   # GET /costs
   # GET /costs.json
   def index
-    @costs = Cost.all
+    @costs = Cost.order('created_at ASC').page(params[:page]).per(20)
   end
 
   # GET /costs/1
