@@ -1,0 +1,41 @@
+<%= form_for @image do |f| %>
+    <%= f.cropbox :file %>
+    <%= f.previewbox :file %>
+    <%= f.submit 'Crop' %>
+<% end %>
+
+
+<script type="text/javascript" charset="utf-8">
+    var CarrierWaveCropper;
+    var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+    jQuery(function() {
+        return new CarrierWaveCropper();
+    });
+    CarrierWaveCropper = (function() {
+        function CarrierWaveCropper() {
+            this.updatePreview = __bind(this.updatePreview, this);
+            this.update = __bind(this.update, this);    $('#image_file_cropbox').Jcrop({
+                aspectRatio: 1,
+                setSelect: [0, 0, 200, 200],
+                onSelect: this.update,
+                onChange: this.update
+            });
+        }
+        CarrierWaveCropper.prototype.update = function(coords) {
+            $('#image_file_crop_x').val(coords.x);
+            $('#image_file_crop_y').val(coords.y);
+            $('#image_file_crop_w').val(coords.w);
+            $('#image_file_crop_h').val(coords.h);
+            return this.updatePreview(coords);
+        };
+        CarrierWaveCropper.prototype.updatePreview = function(coords) {
+            return $('#image_file_previewbox').css({
+                width: Math.round(100 / coords.w * $('#image_file_cropbox').width()) + 'px',
+                height: Math.round(100 / coords.h * $('#image_file_cropbox').height()) + 'px',
+                marginLeft: '-' + Math.round(100 / coords.w * coords.x) + 'px',
+                marginTop: '-' + Math.round(100 / coords.h * coords.y) + 'px'
+            });
+        };
+        return CarrierWaveCropper;
+    })();
+</script>

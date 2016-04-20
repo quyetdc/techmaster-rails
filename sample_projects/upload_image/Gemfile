@@ -49,3 +49,7 @@ gem "twitter-bootstrap-rails"
 gem 'carrierwave'
 gem "mini_magick"
 gem 'cloudinary'
+
+gem 'carrierwave-crop'
+
+gem 'pry-byebug'

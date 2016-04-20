@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160416154210) do
+ActiveRecord::Schema.define(version: 20160420083651) do
 
   create_table "galleries", force: :cascade do |t|
     t.string   "name"
@@ -24,8 +24,12 @@ ActiveRecord::Schema.define(version: 20160416154210) do
     t.string   "file"
     t.string   "name"
     t.integer  "gallery_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "file_crop_x"
+    t.integer  "file_crop_y"
+    t.integer  "file_crop_w"
+    t.integer  "file_crop_h"
   end
 
   add_index "images", ["gallery_id"], name: "index_images_on_gallery_id"

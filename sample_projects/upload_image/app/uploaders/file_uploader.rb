@@ -16,10 +16,20 @@ class FileUploader < CarrierWave::Uploader::Base
   # def store_dir
   #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   # end
-  process resize_to_fill: [800, 800]
+  # process resize_to_fill: [800, 800]
+  # process crop: :file
+
+  version :cropped do
+    process :custom_crop
+  end
 
   version :thumb do
     process resize_to_fill: [200,200]
+  end
+
+  def custom_crop
+    return :x => model.file_crop_x, :y => model.file_crop_y,
+        :width => model.file_crop_w, :height => model.file_crop_h, :crop => :crop
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

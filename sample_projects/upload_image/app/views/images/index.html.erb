@@ -17,11 +17,13 @@
     <% @images.each do |image| %>
       <tr>
         <td><%= link_to image.id, image_path(image) %></td>
-        <td><%= image.file %></td>
+        <td><%= image_tag image.file.thumb.url %></td>
         <td><%= image.name %></td>
         <td><%= image.gallery_id %></td>
         <td><%=l image.created_at %></td>
         <td>
+          <%= link_to 'Show',
+                      image_path(image), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_image_path(image), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
