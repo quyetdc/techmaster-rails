@@ -10,35 +10,40 @@
       </button>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-left">
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-left">
 
-        <li>
-          <%= link_to "Home", root_path%>
-        </li>
-        <li>
-          <%= link_to "Categories", categories_path %>
-        </li>
-        <li>
-          <%= link_to "Costs", costs_path %>
-        </li>
-        <li>
-          <%= link_to "Incomes", incomes_path %>
-        </li>
+      <li>
+        <%= link_to t('home'), root_path %>
+      </li>
+      <li>
+        <%= link_to t('categories'), categories_path %>
+      </li>
+      <li>
+        <%= link_to t('costs'), costs_path %>
+      </li>
+      <li>
+        <%= link_to t('incomes'), incomes_path %>
+      </li>
+      <li> <%= link_to t('lang'), '#' %>
+        <ul>
+          <li><%= link_to 'Vietnamese', :locale => 'vi' %></li>
+          <li><%= link_to 'English', :locale => 'en' %></li>
+        </ul>
+      </li>
 
-      </ul>
+    </ul>
 
-      <ul class="nav navbar-nav navbar-right">
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <% if user_signed_in? %>
+            <%= link_to t('sign_out'), destroy_user_session_path, method: :delete, data: {no_turbolink: true} %>
+        <% else %>
+            <%= link_to t('sign_in'), user_omniauth_authorize_path(:facebook) %>
+        <% end %>
+      </li>
 
-        <li>
-          <% if user_signed_in? %>
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { no_turbolink: true } %>
-          <% else %>
-              <%= link_to "Sign in", user_omniauth_authorize_path(:facebook) %>
-          <% end %>
-        </li>
-
-      </ul>
-    </div>
+    </ul>
+  </div>
     <!-- /.navbar-collapse -->
 </nav>
