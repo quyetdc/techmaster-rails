@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+   home: "Home"
+   categories: "Categories"
+   costs: "Costs"
+   incomes: "Incomes"
+   sign_in: "Sign in"
+   sign_out: "Sign out"
+   lang: "Language"
+

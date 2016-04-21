@@ -1,0 +1,10 @@
+.navbar-left > li > ul {
+  list-style-type: none;
+  display: none;
+  position: absolute;
+  background-color: white;
+}
+
+.navbar-left > li:hover > ul {
+  display: block;
+}
