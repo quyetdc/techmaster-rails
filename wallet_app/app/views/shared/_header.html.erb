@@ -34,7 +34,8 @@
           <% if user_signed_in? %>
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { no_turbolink: true } %>
           <% else %>
-              <%= link_to "Sign in", user_omniauth_authorize_path(:facebook) %>
+              <%#= link_to "Sign in", user_omniauth_authorize_path(:facebook) %>
+              <%= link_to "Sign in", new_user_session_path %>
           <% end %>
         </li>
 

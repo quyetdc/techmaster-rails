@@ -60,3 +60,4 @@ gem "figaro"
 gem 'kaminari'
 gem 'annotate'
 
+gem 'sendgrid'

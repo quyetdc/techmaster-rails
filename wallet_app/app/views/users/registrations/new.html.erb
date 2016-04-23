@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="devise-session-form">
+
+      <div class="row">
+        <div class="col-md-8" style="padding-right: 10%; border-right: 1px solid #c8c8c8">
+          <h2>Sign up</h2>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+              </div>
+              <br>
+              <div class="field">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+              </div>
+
+              <div class="field">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+              </div>
+              <br>
+
+              <% if devise_mapping.rememberable? -%>
+                  <div>
+                    <%= f.check_box :remember_me, class: 'col-md-1', style: 'width: 14px; height: 14px;' %>
+                    <%= f.label :remember_me, class: 'col-md-10', style: 'bottom: 2px;' %>
+                  </div>
+              <% end -%>
+
+              <br>
+              <br>
+
+              <div class="actions">
+                <%= f.submit "Sign up", class: 'btn btn-success col-md-12' %>
+              </div>
+
+              <br>
+              <br>
+              <br>
+              <%= render "users/shared/links" %>
+
+          <% end %>
+        </div>
+
+        <div class="col-md-3 col-offset-1" style="margin-left: 50px;">
+          <h2>
+            Or
+          </h2>
+
+          <br>
+          <br>
+          <%= link_to "Sign up with Facebook", omniauth_authorize_path(resource_name, :facebook), class: 'btn btn-primary' %>
+        </div>
+      </div>
+      <br>
+
+    </div>
+
+  </div>
+</div>
