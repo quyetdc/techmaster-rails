@@ -1,0 +1,24 @@
+<div class="projects">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Listing Projects</h1>
+
+  <hr>
+
+  <% @projects.each do |project| %>
+      <p>
+        <strong>Name:</strong> <%= project.name %>
+      </p>
+      <p>
+        Total tasks: <strong><%= project.tasks_count %></strong>
+      </p>
+  <% end %>
+</div>
+
+<style>
+  .projects {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 80px;
+  }
+</style>
