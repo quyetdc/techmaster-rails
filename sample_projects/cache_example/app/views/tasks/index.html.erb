@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tasks</h1>
+
+<p>
+
+  <% cache('all_uncompleted_tasks', skip_digest: true) do %>
+    All uncompleted tasks:
+    <% @uncompleted_tasks.each do |task| %>
+      <%= task.name %>
+    <% end %>
+  <% end %>
+</p>
+
+<p>
+  <% cache('all_completed_tasks', skip_digest: true) do %>
+      All completed tasks:
+      <% @completed_tasks.each do |task| %>
+          <%= task.name %>
+      <% end %>
+  <% end %>
+
+<br>
+</p>
+
+<%= link_to 'New Task', new_task_path %>
