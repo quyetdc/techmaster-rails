@@ -1,4 +1,5 @@
 class IncomesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_income, only: [:show, :edit, :update, :destroy]
 
   # GET /incomes
@@ -24,7 +25,7 @@ class IncomesController < ApplicationController
   # POST /incomes
   # POST /incomes.json
   def create
-    @income = Income.new(income_params)
+    @income = current_user.incomes.new(income_params)
 
     respond_to do |format|
       if @income.save

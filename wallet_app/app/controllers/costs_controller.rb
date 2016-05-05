@@ -1,4 +1,5 @@
 class CostsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_cost, only: [:show, :edit, :update, :destroy]
 
   # GET /costs
@@ -24,7 +25,7 @@ class CostsController < ApplicationController
   # POST /costs
   # POST /costs.json
   def create
-    @cost = Cost.new(cost_params)
+    @cost = current_user.costs.new(cost_params)
 
     respond_to do |format|
       if @cost.save
