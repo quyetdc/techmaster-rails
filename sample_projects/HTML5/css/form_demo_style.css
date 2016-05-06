@@ -1,0 +1,7 @@
+body{
+
+}
+
+input[type=range]::after { content: attr(max); }
+input[type=range]::before { content: attr(min); }
+input[type=range] { width: 200px; color: blue; font-size: small; }

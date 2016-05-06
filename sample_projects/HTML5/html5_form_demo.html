@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/form_demo_style.css" />
+		<title> Demo Html5 Form </title>
+	</head>	
+
+	<body>
+		<p> Hello! </p>
+		<form id="myform">
+			<label for="date-input">please chooes a date</label>
+			<input type="date" id="date-input"/>
+			</br>
+			<br/>		
+			<label for="time-input">please chooes a time</label>
+			<input type="time" id="time-input"/>
+			</br>
+						<br/>
+			<label for="month-input">please chooes a month</label>
+			<input type="month" id="month-input"/>
+			</br>
+						<br/>
+			<label for="month-input">please chooes a week</label>
+			<input type="week" id="week-input"/>
+			</br>
+						<br/>
+			<label for="range-input">Range</label>
+			<input type="range" id="range-data" min="1" max="10"/>
+			<br/>
+						<br/>
+			<label for="color-input">Color</label>
+			<input type="color" id="color-data"/>
+			<br/>
+						<br/>
+			<label for="search-data">Search: </label>
+			<input type="search" id="search-data" placeholder="Enter search term" />
+			<br/>
+						<br/>
+			<label for="tel-data">Telephone: </label>
+			<input type="tel" id="tel-data" required />
+			<br/>			
+						<br/>
+			<label for="email-data">Email: </label>
+			<input type="email" id="email-data" required />
+			<br/>
+						<br/>
+
+			<label for="list-data">Data list: </label>
+			<input type="text" list="myDataList"/>
+			<datalist id="myDataList">
+				<option label="Mr" value="Mr."></option>
+				<option label="Mrs" value="Mrs."></option>
+				<option label="Ms" value="Ms."></option>
+			</datalist>
+			<br/>
+						<br/>		
+
+			<label for="progress-data">Data list: </label>
+			<progress value="5" max="20" id="progress-data"></progress>
+						<br/>
+						<br/>					
+
+			<label for="meter-data">Meter: </label>
+			<meter id="meter-data" min="10" max="100" value="50" low="20" high="70" optimum="50"></meter>
+						<br/>
+						<br/>											
+			<input type="submit" value="Submit" />
+		</form>
+
+
+		<!-- input outside the form but tide to the form -->
+		<label for="outsideText-data">other text: </label>
+		<input type="text" id="outsideText-data" form="myform" />
+	</body>
+
+</html>
+
