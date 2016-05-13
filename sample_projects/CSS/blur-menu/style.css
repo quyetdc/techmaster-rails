@@ -1,0 +1,59 @@
+body {    
+    background-repeat: repeat, no-repeat;
+    background-attachment: fixed;
+    background-size: auto, cover;
+    background-position: center center;
+    color: #fff;
+    font-family: 'Josefin Slab', Arial, sans-serif;
+    font-size: 13px;
+    background-color: transparent;
+}
+
+.container {
+    position: relative;
+}
+
+h1 {    
+    margin: 40px 0px;
+    padding: 20px;
+    font-size: 42px;
+    text-align: left;
+    font-weight: 400;            
+}
+
+h1 span {
+    font-size: 22px;
+    color: #ddd;
+    padding-top: 10px;
+}
+
+.menu {
+    position: relative;
+    margin: 0 0 10px 20px;
+    padding: 0px;   
+    width: 30%;
+}
+
+.menu li {
+    display: inline-block;
+    font-size: 50px;    
+}
+
+.menu li a{    
+    color: #fff;
+    padding: 10px 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    display: block;
+    margin: 2px 0px;
+    transition: all 0.4s ease-in-out;
+}
+
+.menu li a:hover {
+    background: transparent;
+    text-shadow: 1px 1px 10px rgba(71, 80, 23, 0.6);
+    color: #c4d85a;
+}
+
