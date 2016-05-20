@@ -1,0 +1,21 @@
+.bxslider {
+  text-align: center;
+  img {
+    width: auto;
+    height: 271px;
+    display: inline-block !important;
+  }
+}
+
+.bx-wrapper {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.restaurant-item {
+  margin-bottom: 80px;
+
+  .category-title {
+    font-weight: 600;
+  }
+}
