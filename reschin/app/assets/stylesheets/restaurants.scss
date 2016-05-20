@@ -2,7 +2,8 @@
   text-align: center;
   img {
     width: auto;
-    height: 271px;
+    height: auto;
+    max-height: 271px;
     display: inline-block !important;
   }
 }
