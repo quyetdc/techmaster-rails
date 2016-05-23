@@ -6,6 +6,17 @@
     max-height: 271px;
     display: inline-block !important;
   }
+
+}
+
+#slide-banner {
+  img {
+    max-width: 28%;
+  }
+
+  img:first-child {
+    max-width: 38%;
+  }
 }
 
 .bx-wrapper {

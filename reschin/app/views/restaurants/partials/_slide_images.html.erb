@@ -1,14 +1,11 @@
-<ul class="bxslider">
-  <li class="">
-    <!--<div class="col-md-1" style="width: 6%;"></div>-->
-    <%= image_tag 'http://tea-3.lozi.vn/v1/statics/original/banner_web_75', class: 'img img-responsive', style: 'max-width: 38%' %>
-    <%= image_tag 'http://tea-3.lozi.vn/v1/statics/original/banner_web_71', class: 'img img-responsive', style: 'max-width: 28%' %>
-    <%= image_tag 'http://tea-3.lozi.vn/v1/statics/original/banner_web_14', class: 'img img-responsive', style: 'max-width: 28%' %>
-  </li>
+  <ul class="bxslider" id="slide-banner">
 
-  <li class="">
-    <%= image_tag 'http://tea-3.lozi.vn/v1/statics/original/banner_web_75', class: 'img img-responsive', style: 'max-width: 38%' %>
-    <%= image_tag 'http://tea-3.lozi.vn/v1/statics/original/banner_web_71', class: 'img img-responsive', style: 'max-width: 28%' %>
-    <%= image_tag 'http://tea-3.lozi.vn/v1/statics/original/banner_web_14', class: 'img img-responsive', style: 'max-width: 28%' %>
-  </li>
-</ul>
+      <% @banners.each do |_banners| %>
+        <li class="">
+          <% _banners.each do |banner| %>
+              <%= image_tag banner.image, class: 'img img-responsive' %>
+          <% end %>
+        </li>
+      <% end %>
+
+  </ul>
