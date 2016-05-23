@@ -20,5 +20,5 @@
 //= require_tree .
 
 $(document).ready(function(){
-    $('.bxslider').bxSlider();
+    $('.bxslider').bxSlider({ pager: false });
 });

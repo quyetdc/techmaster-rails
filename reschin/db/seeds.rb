@@ -18,9 +18,91 @@ banners = [
     {
         name: 'image3',
         image: 'http://tea-3.lozi.vn/v1/statics/original/banner_web_14'
+    },
+    {
+        name: 'image4',
+        image: 'http://tea-3.lozi.vn/v1/statics/original/banner_web_75'
+    },
+    {
+        name: 'image5',
+        image: 'http://tea-3.lozi.vn/v1/statics/original/banner_web_71'
+    },
+    {
+        name: 'image6',
+        image: 'http://tea-3.lozi.vn/v1/statics/original/banner_web_14'
     }
 ]
 
 banners.each do |banner|
-  Banner.create(image: banner[:image])
+  Banner.create(image: banner[:image], name: banner[:name])
 end
+
+
+categories = [
+    {
+        name: 'Lẩu & Nướng'
+    },
+    {
+        name: 'Cơm Văn Phòng'
+    },
+    {
+        name: 'Vỉa Hè'
+    }
+]
+
+categories.each do |cat|
+  Category.create(name: cat[:name])
+end
+
+locations = ['Techmaster - Phòng 2304, Star City, Lê Văn Lương']
+
+locations.each do |loc|
+  Location.create(name: loc)
+end
+
+restaurant1s = [
+    {
+        name: 'Lẩu quán',
+    },
+    {
+        name: 'Nướng quán'
+    }
+]
+
+restaurant1s.each do |res|
+  res = Restaurant.create(name: res[:name], location: Location.first)
+  res.categories << Category.first
+end
+
+
+restaurant2s = [
+    {
+        name: 'Cơm bình dân',
+    },
+    {
+        name: 'Phở bò Nam Định'
+    }
+]
+
+restaurant2s.each do |res|
+  res = Restaurant.create(name: res[:name], location: Location.first)
+  res.categories << Category.second
+end
+
+
+restaurant3s = [
+    {
+        name: 'Trà đá',
+    },
+    {
+        name: 'Cafe dạo'
+    }
+]
+
+restaurant3s.each do |res|
+  res = Restaurant.create(name: res[:name], location: Location.first)
+  res.categories << Category.first
+  res.categories << Category.last
+end
+
+

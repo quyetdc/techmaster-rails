@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523034238) do
+ActiveRecord::Schema.define(version: 20160523072231) do
 
   create_table "banners", force: :cascade do |t|
     t.string   "image"
@@ -20,5 +20,42 @@ ActiveRecord::Schema.define(version: 20160523034238) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "cat_res", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "restaurant_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "cat_res", ["category_id"], name: "index_cat_res_on_category_id"
+  add_index "cat_res", ["restaurant_id"], name: "index_cat_res_on_restaurant_id"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.float    "lat"
+    t.float    "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string   "name"
+    t.text     "about"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "location_id"
+  end
+
+  add_index "restaurants", ["location_id"], name: "index_restaurants_on_location_id"
 
 end
