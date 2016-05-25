@@ -1,0 +1,17 @@
+#admin-navbar {
+  font-size: 18px;
+  background-color: darkslategrey;
+
+  height: 61px;
+  line-height: 61px;
+  border: 1px solid darkslategrey;
+
+  ul li a {
+    color: #ffffff !important;
+    padding-top: 20px;
+  }
+}
+
+.navbar {
+  border-radius: 0px !important;
+}

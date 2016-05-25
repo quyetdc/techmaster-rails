@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-10 col-md-offset-1 article-img">
+      <%= image_tag @article.banner.image, class: 'img img-responsive' %>
+    </div>
+
+    <div class="col-md-12">
+      <br>
+      <div class="article-content">
+        <%= @article.content.html_safe %>
+      </div>
+    </div>
+
+  </div>
+</div>

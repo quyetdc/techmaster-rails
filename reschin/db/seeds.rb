@@ -6,6 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+articles = [
+    {
+      title: 'Bún chả Liên Hương',
+      content: 'Chỉ 80k / suất! Thật ngon, thật bất ngờ!'
+    }
+]
+
+articles.each do |arc|
+  Article.create(arc)
+end
+
+Banner.destroy_all
+
 banners = [
     {
         name: 'image1',
@@ -34,7 +47,7 @@ banners = [
 ]
 
 banners.each do |banner|
-  Banner.create(image: banner[:image], name: banner[:name])
+  Banner.create(image: banner[:image], name: banner[:name], article_id: Article.first.id)
 end
 
 

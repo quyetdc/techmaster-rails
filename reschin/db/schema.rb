@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523072231) do
+ActiveRecord::Schema.define(version: 20160524084000) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "banners", force: :cascade do |t|
     t.string   "image"
@@ -19,7 +26,10 @@ ActiveRecord::Schema.define(version: 20160523072231) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "article_id"
   end
+
+  add_index "banners", ["article_id"], name: "index_banners_on_article_id"
 
   create_table "cat_res", force: :cascade do |t|
     t.integer  "category_id"
