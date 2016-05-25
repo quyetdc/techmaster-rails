@@ -1,0 +1,52 @@
+<div class="col-md-12">
+  <div class="pull-left"><h2> List Banners </h2></div>
+  <div class="pull-right admin-new-btn">
+    <%= link_to 'New Banner', new_admin_banner_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <hr>
+</div>
+
+<div class="col-md-12">
+  <table class="table table-hover">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </thead>
+
+    <tbody>
+      <% @banners.each do |banner| %>
+        <tr>
+          <td>
+            <%= banner.id %>
+          </td>
+
+          <td>
+            <%= banner.name %>
+          </td>
+
+          <td>
+            <%= image_tag banner.image, width: '100px', height: 'auto' %>
+          </td>
+
+          <td>
+            <%= banner.description %>
+          </td>
+
+          <td>
+            <button class="btn btn-default">View</button>
+            <button class="btn btn-default">Edit</button>
+            <button class="btn btn-danger">Destroy</button>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+

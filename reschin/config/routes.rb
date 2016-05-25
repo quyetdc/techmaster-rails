@@ -9,11 +9,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :articles
+    resources :banners
   end
 
   scope :admin do
     root 'admin#dashboard', as: :admin_root
-end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
