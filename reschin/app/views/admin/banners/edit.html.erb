@@ -1,6 +1,6 @@
 <div class="col-md-10 col-md-offset-1">
   <h2>
-    New Banner
+    Edit Banner
   </h2>
 
   <hr>
@@ -26,7 +26,7 @@
         <%= f.collection_select(:article_id, Article.all, :id, :title) %>
       </div>
 
-      <%= f.submit 'Create', class: 'btn btn-success' %>
+      <%= f.submit 'Update', class: 'btn btn-success' %>
       <%=  link_to 'Cancel', admin_banners_path, class: 'btn btn-default', style: 'margin-left: 15px;' %>
   <% end %>
 </div>

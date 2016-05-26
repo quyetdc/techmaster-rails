@@ -6,10 +6,18 @@
   line-height: 61px;
   border: 1px solid darkslategrey;
 
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+
   ul li a {
     color: #ffffff !important;
     padding-top: 20px;
   }
+}
+
+#admin-page-content {
+  margin-top: 80px;
 }
 
 .navbar {

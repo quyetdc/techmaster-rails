@@ -39,14 +39,12 @@
           </td>
 
           <td>
-            <button class="btn btn-default">View</button>
-            <button class="btn btn-default">Edit</button>
-            <button class="btn btn-danger">Destroy</button>
+            <%= link_to 'View', admin_banner_path(banner), class: "btn btn-default" %>
+            <%= link_to 'Edit', edit_admin_banner_path(banner), class: "btn btn-default" %>
+            <%= link_to 'Destroy', admin_banner_path(banner), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-
-
