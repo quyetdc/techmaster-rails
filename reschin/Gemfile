@@ -56,3 +56,4 @@ gem "twitter-bootstrap-rails"
 gem "font-awesome-rails"
 gem 'bxslider-rails'
 
+gem 'annotate'

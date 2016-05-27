@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: banners
+#
+#  id          :integer          not null, primary key
+#  image       :string
+#  name        :string
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  article_id  :integer
+#
+
 class Banner < ActiveRecord::Base
   belongs_to :article
 
