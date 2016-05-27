@@ -1,1 +1,48 @@
-Index Articles
+<div class="col-md-12">
+  <div class="pull-left"><h2> List Articles </h2></div>
+  <div class="pull-right admin-new-btn">
+    <%= link_to 'New Article', new_admin_article_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <hr>
+</div>
+
+
+<div class="col-md-12">
+  <table class="table table-hover">
+    <thead>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Banner</th>
+      <th>Actions</th>
+    </thead>
+
+    <tbody>
+      <% @articles.each do |article| %>
+          <tr>
+            <td>
+              <%= article.id %>
+            </td>
+
+            <td>
+              <%= article.title%>
+            </td>
+
+            <td>
+              <%= article.content.truncate(100, omission: '...') %>
+            </td>
+            <td></td>
+
+            <td>
+              <%= link_to 'View', admin_article_path(article), class: "btn btn-default", data: { no_turbolink: true } %>
+              <%= link_to 'Edit', edit_admin_article_path(article), class: "btn btn-default", data: { no_turbolink: true } %>
+              <%= link_to 'Destroy', admin_article_path(article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+  </table>
+</div>

@@ -1,0 +1,21 @@
+
+<%= form_for [:admin, @article] do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :content, :class => 'control-label' %>
+      <%= f.text_area :content, :class => 'form-control ckeditor' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :banner %>
+      <%= f.collection_select(:banner_id, Banner.all, :id, :name, {:selected => @article.banner.id}) %>
+      <% binding.pry %>
+    </div>
+
+    <%= f.submit nil, class: 'btn btn-success' %>
+    <%=  link_to 'Cancel', admin_articles_path, class: 'btn btn-default', style: 'margin-left: 15px;' %>
+<% end %>

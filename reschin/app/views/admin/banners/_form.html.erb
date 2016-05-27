@@ -1,0 +1,25 @@
+
+<%= form_for [:admin, @banner] do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :image %>
+      <%= f.text_field :image, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :article %>
+      <%= f.collection_select(:article_id, Article.all, :id, :title) %>
+    </div>
+
+    <%= f.submit nil, class: 'btn btn-success' %>
+    <%=  link_to 'Cancel', admin_banners_path, class: 'btn btn-default', style: 'margin-left: 15px;' %>
+<% end %>

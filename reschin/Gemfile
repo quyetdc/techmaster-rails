@@ -57,3 +57,5 @@ gem "font-awesome-rails"
 gem 'bxslider-rails'
 
 gem 'annotate'
+
+gem 'ckeditor_rails'
