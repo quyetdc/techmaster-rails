@@ -8,6 +8,11 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
+# Indexes
+#
+#  index_cat_res_on_category_id    (category_id)
+#  index_cat_res_on_restaurant_id  (restaurant_id)
+#
 
 class CatRe < ActiveRecord::Base
   belongs_to :category

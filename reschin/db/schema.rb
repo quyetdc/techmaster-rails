@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -27,19 +26,17 @@ ActiveRecord::Schema.define(version: 20160524084000) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "article_id"
+    t.index ["article_id"], name: "index_banners_on_article_id"
   end
-
-  add_index "banners", ["article_id"], name: "index_banners_on_article_id"
 
   create_table "cat_res", force: :cascade do |t|
     t.integer  "category_id"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.index ["category_id"], name: "index_cat_res_on_category_id"
+    t.index ["restaurant_id"], name: "index_cat_res_on_restaurant_id"
   end
-
-  add_index "cat_res", ["category_id"], name: "index_cat_res_on_category_id"
-  add_index "cat_res", ["restaurant_id"], name: "index_cat_res_on_restaurant_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -64,8 +61,7 @@ ActiveRecord::Schema.define(version: 20160524084000) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "location_id"
+    t.index ["location_id"], name: "index_restaurants_on_location_id"
   end
-
-  add_index "restaurants", ["location_id"], name: "index_restaurants_on_location_id"
 
 end

@@ -10,6 +10,10 @@
 #  updated_at  :datetime         not null
 #  location_id :integer
 #
+# Indexes
+#
+#  index_restaurants_on_location_id  (location_id)
+#
 
 class Restaurant < ActiveRecord::Base
   has_many :cat_res

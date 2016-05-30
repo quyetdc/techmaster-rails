@@ -10,6 +10,10 @@
 #  updated_at  :datetime         not null
 #  article_id  :integer
 #
+# Indexes
+#
+#  index_banners_on_article_id  (article_id)
+#
 
 class Banner < ActiveRecord::Base
   belongs_to :article
