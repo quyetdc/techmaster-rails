@@ -14,25 +14,27 @@
             <% cat.restaurants.to_a.transform(4).each do |_res| %>
                 <li>
                   <% _res.each do |res| %>
-                      <div class="col-md-3 col-sm-6 sol-xs-12">
-                        <div class="card">
-                          <img class="card-img-top" src="http://tea-3.lozi.vn/v1/images/resized/lau-tra-sua-xo-anh-hy-1460899544-214660-1463492714?w=640&type=s" alt="Card image cap">
-                          <div class="card-block">
-                            <h4 class="card-title"><%= res.name %> </h4>
-                            <p class="card-location">
-                              <span class="fa fa-map-marker"></span> <%= res.location.name %>
-                            <hr>
-                            </p>
-                            <p class="card-text">
-                              <% if res.about %>
-                                  <%= res.about %>
-                              <% else %>
-                                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                              <% end %>
-                            </p>
+                      <%= link_to restaurant_path(res) do %>
+                          <div class="col-md-3 col-sm-6 sol-xs-12">
+                            <div class="card">
+                              <img class="card-img-top" src="http://tea-3.lozi.vn/v1/images/resized/lau-tra-sua-xo-anh-hy-1460899544-214660-1463492714?w=640&type=s" alt="Card image cap">
+                              <div class="card-block">
+                                <h4 class="card-title"><%= res.name %> </h4>
+                                <p class="card-location">
+                                  <span class="fa fa-map-marker"></span> <%= res.location.name %>
+                                <hr>
+                                </p>
+                                <p class="card-text">
+                                  <% if res.about %>
+                                      <%= res.about.html_safe %>
+                                  <% else %>
+                                      Some quick example text to build on the card title and make up the bulk of the card's content.
+                                  <% end %>
+                                </p>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
+                      <% end %>
                   <% end %>
                 </li>
             <% end %>

@@ -1,3 +1,4 @@
+<script src="//cdn.ckeditor.com/4.5.9/full/ckeditor.js"></script>
 
 <%= form_for [:admin, @article] do |f| %>
     <div class="form-group">
@@ -13,7 +14,6 @@
     <div class="form-group">
       <%= f.label :banner %>
       <%= f.collection_select(:banner_id, Banner.all, :id, :name, {:selected => @article.banner.id}) %>
-      <% binding.pry %>
     </div>
 
     <%= f.submit nil, class: 'btn btn-success' %>

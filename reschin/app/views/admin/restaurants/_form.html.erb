@@ -1,0 +1,32 @@
+<script src="//cdn.ckeditor.com/4.5.9/full/ckeditor.js"></script>
+
+<%= form_for [:admin, @restaurant] do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :about, :class => 'control-label' %>
+      <%= f.text_area :about, :class => 'form-control ckeditor' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :image %>
+      <%= f.text_field :image,  :class => 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :categories, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-10">
+        <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |c| %>
+            <%= c.label %>
+            <span style="margin-left: 5px; position:relative;"> <%= c.check_box %> </span>
+            <br>
+        <% end %>
+      </div>
+    </div>
+
+    <%= f.submit nil, class: 'btn btn-success' %>
+    <%=  link_to 'About', admin_restaurants_path, class: 'btn btn-default', style: 'margin-left: 15px;' %>
+<% end %>

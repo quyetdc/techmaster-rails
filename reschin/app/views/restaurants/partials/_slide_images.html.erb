@@ -3,7 +3,7 @@
       <% @banners.each do |_banners| %>
         <li class="">
           <% _banners.each do |banner| %>
-              <%= link_to article_path(banner.article) do %>
+              <%= link_to(banner.article ? article_path(banner.article) : '#') do %>
                 <%= image_tag banner.image, class: 'img img-responsive' %>
               <% end %>
           <% end %>

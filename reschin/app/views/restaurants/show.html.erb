@@ -1,0 +1,108 @@
+<div id="restaurant-container">
+    <div id="restaurant-banner">
+    </div>
+
+    <div id="restaurant-info">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
+                <%= image_tag (@restaurant.image ? @restaurant.image : 'sample-restaurant-img.jpg'), class: 'img img-rounded img-responsive restaurant-img-avatar' %>
+            </div>
+
+            <div class="col-md-8 col-sm-8 col-xs-8">
+                <h2 class="restaurant-name"><%= @restaurant.name %></h2>
+              <div class="restaurant-extra-info">
+                <p>
+                  Techmaster, Star City, Lê Văn Lương, Hà Nội
+                </p>
+                <p>
+                  Open: 18:30 - 21:30
+                </p>
+                <p>
+                  <span class="fa fa-mobile"></span>: 098666888
+                </p>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div id="restaurant-relevant" class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="restaurant-comment">
+            <div class="row">
+                <div class="col-md-10">
+                  <div class="like-number">
+                    <i class="fa fa-heart"></i>
+                  </div>
+                  68 người thích cửa hàng này
+                </div>
+
+
+              <div class="col-md-2">
+                <button class="btn btn-primary  pull-right"> Thích </button>
+              </div>
+            </div>
+
+            <br>
+            <div class="row">
+              <div class="col-md-12">
+                <i class="fa fa-comments"></i>
+                86 bình luận
+                <hr>
+              </div>
+
+              <div class="col-md-12 restaurant-comments-list">
+
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <div class="col-md-10 col-md-offset-1">
+                        <%= image_tag 'sample-restaurant-img.jpg', class: "img img-responsive img-rounded" %>
+                      </div>
+                    </div>
+
+                    <div class="col-md-10">
+                      Cool qua
+                    </div>
+                  </div>
+                </div>
+
+                <!--<div class="row">-->
+                <div class="item">
+                  <div class="row">
+                    <div class="col-md-2">
+                      <div class="col-md-10 col-md-offset-1">
+                        <%= image_tag 'sample-restaurant-img.jpg', class: "img img-responsive img-rounded" %>
+                      </div>
+                    </div>
+
+                    <div class="col-md-10">
+                      Qua cool
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-md-12">
+                <form>
+                  <textarea class="form-control" rows="5"></textarea>
+                  <br>
+                  <button type="submit" class="btn btn-success pull-right">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="restaurant-images col-md-3">
+          BBBB
+          BBBB
+        </div>
+      </div>
+    </div>
+</div>

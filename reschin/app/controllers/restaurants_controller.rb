@@ -20,4 +20,9 @@ class RestaurantsController < ApplicationController
     @banners = Banner.all.to_a.transform(3)
     @categories = Category.all
   end
+
+
+  def show
+    @restaurant = Restaurant.where(id: params[:id]).first
+  end
 end

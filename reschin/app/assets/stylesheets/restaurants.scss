@@ -32,3 +32,74 @@
     font-weight: 600;
   }
 }
+
+#restaurant-container{
+  position: relative;
+  min-height: 300px;
+}
+
+#restaurant-banner {
+  width: 100%;
+  position: absolute;
+  background: image-url('restaurant_cover.jpg');
+  background-size: cover;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  height: 300px;
+  opacity: 0.4;
+}
+
+#restaurant-info {
+}
+
+.restaurant-img-avatar {
+  margin-top: 50px;
+  width: 165px;
+  height: 165px;
+}
+
+.restaurant-name {
+  margin-top: 60px;
+  margin-left: 30px;
+  color: darkslategrey;
+  font-weight: 700;
+}
+
+.restaurant-extra-info {
+  color: darkolivegreen;
+  margin-left: 30px;
+}
+
+#restaurant-relevant {
+  margin-top: 50px;
+  margin-bottom: 60px;
+  .restaurant-comment, .restaurant-images {
+    background-color: #fff;
+    border: 1px solid #c3c3c3;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  .restaurant-comment {
+    position: relative;
+    margin-right: 20px;
+  }
+
+  .like-number {
+    background-color: green;
+    color: #ffffff;
+    padding: 6px 8px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  .restaurant-comments-list {
+    margin-bottom: 15px;
+
+    .item {
+      margin-bottom: 15px;
+      position: relative;
+    }
+  }
+}

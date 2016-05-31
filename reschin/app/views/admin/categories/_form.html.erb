@@ -1,0 +1,21 @@
+<script src="//cdn.ckeditor.com/4.5.9/full/ckeditor.js"></script>
+
+<%= form_for [:admin, @category] do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, :class => 'control-label' %>
+      <%= f.text_area :description, :class => 'form-control ckeditor' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :image %>
+      <%= f.text_field :image,  :class => 'form-control' %>
+    </div>
+
+    <%= f.submit nil, class: 'btn btn-success' %>
+    <%=  link_to 'Cancel', admin_categories_path, class: 'btn btn-default', style: 'margin-left: 15px;' %>
+<% end %>

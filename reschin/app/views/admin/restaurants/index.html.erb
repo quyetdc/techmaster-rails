@@ -1,0 +1,54 @@
+
+<div class="col-md-12">
+  <div class="pull-left"><h2> List Restaurant </h2></div>
+  <div class="pull-right admin-new-btn">
+    <%= link_to 'New Restaurant', new_admin_restaurant_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <hr>
+</div>
+
+
+<div class="col-md-12">
+  <table class="table table-hover">
+    <thead>
+
+    <th>Id</th>
+    <th>Name</th>
+    <th>About</th>
+    <th>Image</th>
+    <th>Categories</th>
+    <th>Actions</th>
+
+    </thead>
+
+    <tbody>
+    <% @restaurants.each do |res| %>
+        <tr>
+          <td>
+            <%= res.id %>
+          </td>
+
+          <td>
+            <%= res.name %>
+          </td>
+
+          <td>
+            <%= res.about ? res.about.truncate(100, omission: '...') : 'No About description' %>
+          </td>
+          <td>
+            <%= res.image ? image_tag(res.image, width: '150px', height: '150px') : '' %>
+          </td>
+          <td><%= (res.categories.all.map {|t| t.name}).join(', ') %></td>
+
+          <td>
+            <%= link_to 'Edit', edit_admin_restaurant_path(res), class: "btn btn-default", data: { no_turbolink: true } %>
+            <%= link_to 'Destroy', admin_restaurant_path(res), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

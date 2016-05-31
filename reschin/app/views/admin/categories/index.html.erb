@@ -1,0 +1,51 @@
+<div class="col-md-12">
+  <div class="pull-left"><h2> List Categories </h2></div>
+  <div class="pull-right admin-new-btn">
+    <%= link_to 'New Category', new_admin_category_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<div class="col-md-12">
+  <hr>
+</div>
+
+
+<div class="col-md-12">
+  <table class="table table-hover">
+    <thead>
+
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Actions</th>
+
+    </thead>
+
+    <tbody>
+    <% @categories.each do |cat| %>
+        <tr>
+          <td>
+            <%= cat.id %>
+          </td>
+
+          <td>
+            <%= cat.name %>
+          </td>
+
+          <td>
+            <%= cat.description ? cat.description.truncate(100, omission: '...') : 'No description' %>
+          </td>
+          <td>
+            <%= cat.image ? image_tag(cat.image, width: '150px', height: '150px') : '' %>
+          </td>
+
+          <td>
+            <%= link_to 'Edit', edit_admin_category_path(cat), class: "btn btn-default", data: { no_turbolink: true } %>
+            <%= link_to 'Destroy', admin_category_path(cat), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
