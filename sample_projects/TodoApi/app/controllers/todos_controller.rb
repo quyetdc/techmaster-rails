@@ -5,9 +5,14 @@ class TodosController < ApplicationController
 
   # GET /todos
   def index
-    @todos = Todo.all
+    if params[:page]
+      page_number = params[:page][:number]
+      page_size = params[:page][:size]
+    end
 
-    render json: @todos
+    @todos = Todo.page(page_number).per(page_size)
+
+    render json: @todos, includes: 'notes'
   end
 
   # GET /todos/1
