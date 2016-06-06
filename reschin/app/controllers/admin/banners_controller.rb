@@ -1,5 +1,4 @@
-class Admin::BannersController < ApplicationController
-  layout 'admin'
+class Admin::BannersController < AdminController
 
   def index
     @banners = Banner.all

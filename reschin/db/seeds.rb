@@ -118,4 +118,5 @@ restaurant3s.each do |res|
   res.categories << Category.last
 end
 
-
+user = User.create(email: 'admin@test.com', password: 'password', password_confirmation: 'password')
+user.add_role :admin

@@ -9,10 +9,6 @@
         </a>
       </div>
 
-      <div class="pull-right">
-
-      </div>
-
     </li>
     <li>
       <%= link_to 'Banner', admin_banners_path %>
@@ -29,6 +25,11 @@
     <li>
       <a href="#">Location</a>
     </li>
+
+    <li>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    </li>
+
   </ul>
 </div>
 <!-- /#sidebar-wrapper -->
