@@ -24,5 +24,11 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.where(id: params[:id]).first
+
+    if current_user
+      @is_liked = Favorite.where(
+          user_id: current_user.id, restaurant_id: @restaurant.id
+      ).exists?
+    end
   end
 end

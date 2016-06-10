@@ -43,7 +43,16 @@
 
 
               <div class="col-md-2">
-                <button class="btn btn-primary  pull-right"> Thích </button>
+                <% if user_signed_in? %>
+                    <button class="btn <%= @is_liked ? 'btn-danger' : 'btn-primary' %>
+                    pull-right" id="btn-like"
+                            restaurant-id="<%= @restaurant.id %>">
+                      <%= @is_liked ? 'Bo Thich' : 'Thich' %>
+                    </button>
+                <% else %>
+                    <%= link_to 'Thich', new_user_session_path, class: 'btn btn-primary' %>
+                <% end %>
+
               </div>
             </div>
 

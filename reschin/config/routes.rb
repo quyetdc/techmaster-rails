@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'articles/:id' => 'articles#show', as: :article
 
+  post 'favorites' => 'favorites#create'
+
   namespace :admin do
     resources :articles
     resources :banners
