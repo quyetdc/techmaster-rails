@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/TodoApi.iml" filepath="$PROJECT_DIR$/.idea/TodoApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../barcos/.idea/barcos.iml" filepath="$PROJECT_DIR$/../../../barcos/.idea/barcos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../reschin/.idea/reschin.iml" filepath="$PROJECT_DIR$/../../reschin/.idea/reschin.iml" />
     </modules>
   </component>
 </project>
