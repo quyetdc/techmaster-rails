@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ghostly Divs</title>
+        <link rel='stylesheet' type='text/css' href='stylesheet.css'/>
+        <script type='text/javascript' src='script.js'></script>
+	</head>
+	<body>
+        <div>Home</div>
+        <div>About Us</div>
+        <div>Contact</div>   
+	</body>
+</html>
