@@ -1,0 +1,10 @@
+<div class="comment-form">
+
+    <%= form_for(comment, remote: true) do |f| %>
+      <%= f.text_area :content, class: "form-control", rows: 5 %>
+      <%= f.hidden_field :restaurant_id, value: restaurant.id %>
+      <br>
+      <%= f.submit 'Submit', class: "btn btn-success pull-right" %>
+    <% end %>
+
+</div>

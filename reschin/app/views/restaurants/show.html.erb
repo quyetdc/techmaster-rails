@@ -65,44 +65,11 @@
               </div>
 
               <div class="col-md-12 restaurant-comments-list">
-
-                <div class="item">
-                  <div class="row">
-                    <div class="col-md-2">
-                      <div class="col-md-10 col-md-offset-1">
-                        <%= image_tag 'sample-restaurant-img.jpg', class: "img img-responsive img-rounded" %>
-                      </div>
-                    </div>
-
-                    <div class="col-md-10">
-                      Cool qua
-                    </div>
-                  </div>
-                </div>
-
-                <!--<div class="row">-->
-                <div class="item">
-                  <div class="row">
-                    <div class="col-md-2">
-                      <div class="col-md-10 col-md-offset-1">
-                        <%= image_tag 'sample-restaurant-img.jpg', class: "img img-responsive img-rounded" %>
-                      </div>
-                    </div>
-
-                    <div class="col-md-10">
-                      Qua cool
-                    </div>
-                  </div>
-                </div>
-
+                  <%= render :partial => 'comments/comment', :collection => @comments, :as => :comment %>
               </div>
 
               <div class="col-md-12">
-                <form>
-                  <textarea class="form-control" rows="5"></textarea>
-                  <br>
-                  <button type="submit" class="btn btn-success pull-right">Submit</button>
-                </form>
+                <%= render :partial => 'comments/form', :locals => { :comment => @new_comment, restaurant: @restaurant } %>
               </div>
             </div>
           </div>

@@ -30,5 +30,7 @@ class RestaurantsController < ApplicationController
           user_id: current_user.id, restaurant_id: @restaurant.id
       ).exists?
     end
+    @comments = @restaurant.comments
+    @new_comment = Comment.new
   end
 end

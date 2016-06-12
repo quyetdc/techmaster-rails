@@ -20,6 +20,7 @@ class Restaurant < ActiveRecord::Base
   has_many :categories, through: :cat_res
 
   has_many :favorites
+  has_many :comments
 
   belongs_to :location
 

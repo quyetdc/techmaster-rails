@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   get 'restaurants/:id', to: 'restaurants#show', as: :restaurant
 
   get 'articles/:id' => 'articles#show', as: :article
-
   post 'favorites' => 'favorites#create'
+  resources :comments, :only => [:create, :destroy]
 
   namespace :admin do
     resources :articles
