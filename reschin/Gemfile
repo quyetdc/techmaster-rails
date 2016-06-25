@@ -65,3 +65,13 @@ gem 'ckeditor_rails'
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
+
+gem 'rack-mini-profiler'
+
+gem "bullet", :group => "development"
+
+gem 'carrierwave'
+
+gem 'cloudinary'
+gem "mini_magick"
+

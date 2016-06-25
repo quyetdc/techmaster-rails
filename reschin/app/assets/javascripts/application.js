@@ -17,7 +17,8 @@
 
 //= require twitter/bootstrap
 //= require turbolinks
-//= require_tree .
+//= require comments
+//= require restaurants
 
 $(document).ready(function(){
     $('.bxslider').bxSlider({ pager: false })

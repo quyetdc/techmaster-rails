@@ -17,7 +17,7 @@
 
 class RestaurantsController < ApplicationController
   def index
-    @banners = Banner.all.to_a.transform(3)
+    @banners = Banner.includes(:article).all.to_a.transform(3)
     @categories = Category.all
   end
 
@@ -32,5 +32,20 @@ class RestaurantsController < ApplicationController
     end
     @comments = @restaurant.comments
     @new_comment = Comment.new
+
+    @checkin = Checkin.new
+
+    @checkins = @restaurant.checkins.last(4)
   end
+
+  def checkin
+    @restaurant = Restaurant.find(params[:checkin][:restaurant_id])
+
+    @checkin = Checkin.new(params[:checkin].permit(:comment, :image, :restaurant_id))
+    @checkin.user = current_user
+    @checkin.save
+
+    redirect_to restaurant_path(@restaurant)
+  end
+
 end

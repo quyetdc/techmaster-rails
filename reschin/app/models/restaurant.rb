@@ -21,6 +21,7 @@ class Restaurant < ActiveRecord::Base
 
   has_many :favorites
   has_many :comments
+  has_many :checkins
 
   belongs_to :location
 
