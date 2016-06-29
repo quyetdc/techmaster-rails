@@ -65,3 +65,5 @@ gem 'ckeditor_rails'
 gem 'devise'
 gem 'cancancan'
 gem 'rolify'
+
+gem 'sendgrid'
