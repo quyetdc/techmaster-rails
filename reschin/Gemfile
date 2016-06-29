@@ -67,3 +67,12 @@ gem 'cancancan'
 gem 'rolify'
 
 gem 'sendgrid'
+gem 'rack-mini-profiler'
+
+gem "bullet", :group => "development"
+
+gem 'carrierwave'
+
+gem 'cloudinary'
+gem "mini_magick"
+

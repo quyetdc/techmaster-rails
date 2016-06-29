@@ -60,13 +60,26 @@
         <li><a href="#">Category</a> </li>
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <div class="btn btn-danger" style="color: #fff;">
-            <strong><span class="fa fa-map-pin"></span> Check in</strong>
-          </div>
-        </li>
-      </ul>
+      <% if params[:controller] == 'restaurants' && params[:action] == 'show' %>
+          <ul class="nav navbar-nav navbar-right" >
+            <li>
+
+              <btn class="btn btn-danger"
+                   style="color: #fff;"
+                   <%= 'disabled' unless user_signed_in? %>
+                   data-toggle="modal" data-target="#checkinModal" >
+
+                <strong><span class="fa fa-map-pin"></span> Check in</strong>
+
+              </btn>
+            </li>
+
+            <!-- Button trigger modal -->
+            <%= render partial: 'checkins/form' %>
+
+          </ul>
+      <% end %>
+
     </div><!-- /.navbar-collapse -->
 
   </div><!-- /.container-fluid -->

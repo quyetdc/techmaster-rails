@@ -76,8 +76,27 @@
         </div>
 
         <div class="restaurant-images col-md-3">
-          BBBB
-          BBBB
+          <% @checkins.each do |ci| %>
+              <% if ci.image.present? %>
+                  <div class="col-md-6" style="margin-bottom: 30px;">
+                    <%= image_tag ci.image.thumb.url, class: 'img img-responsive' %>
+                  </div>
+              <% end %>
+
+          <% end %>
+
+
+          <div class="col-md-6">
+
+          </div>
+
+          <div class="col-md-6">
+
+          </div>
+
+          <div class="col-md-6">
+
+          </div>
         </div>
       </div>
     </div>

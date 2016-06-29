@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   scope :admin do
     root 'admin#dashboard', as: :admin_root
   end
+
+  post 'checkins', to: 'restaurants#checkin', as: :checkins
 end

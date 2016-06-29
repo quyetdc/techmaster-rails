@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: quyetdc-github-io
+  api_key: '782567535353752'
+  api_secret: lUBcoDwTokpY2xYJiWpIp4gXprk
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: quyetdc-github-io
+  api_key: '782567535353752'
+  api_secret: lUBcoDwTokpY2xYJiWpIp4gXprk
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: quyetdc-github-io
+  api_key: '782567535353752'
+  api_secret: lUBcoDwTokpY2xYJiWpIp4gXprk
+  enhance_image_tag: true
+  static_image_support: false

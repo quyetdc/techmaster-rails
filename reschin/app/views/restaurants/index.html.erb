@@ -11,7 +11,7 @@
         <div class="row">
           <ul class="bxslider">
 
-            <% cat.restaurants.to_a.transform(4).each do |_res| %>
+            <% cat.restaurants.includes(:location).to_a.transform(4).each do |_res| %>
                 <li>
                   <% _res.each do |res| %>
                       <%= link_to restaurant_path(res) do %>
